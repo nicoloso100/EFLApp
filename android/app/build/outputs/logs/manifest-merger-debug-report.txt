@@ -1,0 +1,241 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:1-27:12
+MERGED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:1-27:12
+MERGED from [:react-native-sound-recorder] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-sound-recorder\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-vector-icons] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-youtube] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-youtube\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e084029e9803411c26e272c3ffbce9a\AndroidManifest.xml:2:1-13:12
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\2c40c9e88fdbbf0521842481d1ba31b2\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-sound] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-sound\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2d0579e50357b9506890fcfe1485dc2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a84534bfbe6d6efc41f8bc6b57c26fbf\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e990bde75c10f4a962e330863bed5fa\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\ea0c66cd3498439ac3cc84d232fcbe24\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\8a087eaa9212b8d6441741ef11ba8866\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d37b48bcdadcf47d43a16ebcff9f33a3\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\10afcb56cc8f85ab5695f4a0978b1eba\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\44d11aa91a8eea8f5e909b5ca5fdf7c0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2030ffdbb8970f0d17f85717009c928\AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\90428d52ab66312d20c40c1fa417ac66\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\09de1231868b09075aff574d5e641dc2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\f8a1fc98f5b2eb318e1db40f4273536f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\fb9d89b16e61d10539f810166f0f7dc7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\42e829111215051248f59c14369aa45a\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\6fde794c39b641364f8fce2fdc2ae6e0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\25f4d536676dc2941fefcf256ae3807a\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\416d8c72ab1175875495cee46a8e3190\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\caf02a89a2e1a55f945f6a0a37802f09\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\072d8e08d0a9527c08faa66d5e790260\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\120a62591c82b4f13a215b55a6911131\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d10f943c945cd286724acdd77d3d2eee\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e95801c9cb1934b154c103b2a0132473\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\858820f457e800f098ae1164700d8098\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5566b98f903a67bb33af95c8bee0d3b5\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\85f4ed7fb0617e8950431b398119e3ef\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d352c650831b121bea81bc8a0f309edf\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\ef0654458dbe5d03c9a46e1138412e3f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a9de51fef7ccf926d3d318226ca3ace8\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\47b29480f68cc65e04b1dc6e0ef980d7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\7d0a587db84c64cffe3298118978c0dc\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\c3d3e6ae07abaafff16aa0a862efd397\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e963029f20a84d4079508675e61d085c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a2459c408815a95eebf60aec1b3a59cb\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\0a481b413a5c139bf99ba18f8498f348\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5f8a0b79df4d2aa326889431495b5c8c\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:2:1-9:12
+	package
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:2:3-23
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:2:3-23
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:1-27:12
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:1-27:12
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:5:5-71
+MERGED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:5:5-71
+MERGED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:5:5-71
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:5:22-68
+application
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:7:5-25:19
+MERGED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:7:5-25:19
+MERGED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:7:5-25:19
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e084029e9803411c26e272c3ffbce9a\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e084029e9803411c26e272c3ffbce9a\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2030ffdbb8970f0d17f85717009c928\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2030ffdbb8970f0d17f85717009c928\AndroidManifest.xml:11:5-20
+MERGED from [androidx.core:core:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\858820f457e800f098ae1164700d8098\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\858820f457e800f098ae1164700d8098\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5566b98f903a67bb33af95c8bee0d3b5\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5566b98f903a67bb33af95c8bee0d3b5\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\858820f457e800f098ae1164700d8098\AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:9:7-39
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:9:7-39
+	tools:ignore
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:8:75-114
+	android:roundIcon
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:11:7-52
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:11:7-52
+	tools:targetApi
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:8:54-74
+	android:icon
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:10:7-41
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:10:7-41
+	android:allowBackup
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:12:7-34
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:12:7-34
+	android:theme
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:13:7-38
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:13:7-38
+	android:usesCleartextTraffic
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:8:18-53
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:8:7-38
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:8:7-38
+activity#com.eflapp.MainActivity
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:14:7-23:18
+	android:label
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:16:9-41
+	android:windowSoftInputMode
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:18:9-51
+	android:configChanges
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:17:9-79
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:15:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:19:9-22:25
+action#android.intent.action.MAIN
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:20:13-65
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:20:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:21:13-73
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:21:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:24:7-84
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml:24:17-81
+uses-sdk
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-sound-recorder] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-sound-recorder\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-sound-recorder] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-sound-recorder\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-youtube] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-youtube\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-youtube] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-youtube\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e084029e9803411c26e272c3ffbce9a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e084029e9803411c26e272c3ffbce9a\AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\2c40c9e88fdbbf0521842481d1ba31b2\AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\2c40c9e88fdbbf0521842481d1ba31b2\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-sound] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-sound\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:react-native-sound] C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\node_modules\react-native-sound\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2d0579e50357b9506890fcfe1485dc2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2d0579e50357b9506890fcfe1485dc2\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a84534bfbe6d6efc41f8bc6b57c26fbf\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a84534bfbe6d6efc41f8bc6b57c26fbf\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e990bde75c10f4a962e330863bed5fa\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\9e990bde75c10f4a962e330863bed5fa\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\ea0c66cd3498439ac3cc84d232fcbe24\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\ea0c66cd3498439ac3cc84d232fcbe24\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\8a087eaa9212b8d6441741ef11ba8866\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\8a087eaa9212b8d6441741ef11ba8866\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d37b48bcdadcf47d43a16ebcff9f33a3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d37b48bcdadcf47d43a16ebcff9f33a3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\10afcb56cc8f85ab5695f4a0978b1eba\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\10afcb56cc8f85ab5695f4a0978b1eba\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\44d11aa91a8eea8f5e909b5ca5fdf7c0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\44d11aa91a8eea8f5e909b5ca5fdf7c0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2030ffdbb8970f0d17f85717009c928\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e2030ffdbb8970f0d17f85717009c928\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\90428d52ab66312d20c40c1fa417ac66\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\90428d52ab66312d20c40c1fa417ac66\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\09de1231868b09075aff574d5e641dc2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\09de1231868b09075aff574d5e641dc2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\f8a1fc98f5b2eb318e1db40f4273536f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\f8a1fc98f5b2eb318e1db40f4273536f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\fb9d89b16e61d10539f810166f0f7dc7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\fb9d89b16e61d10539f810166f0f7dc7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\42e829111215051248f59c14369aa45a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\42e829111215051248f59c14369aa45a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\6fde794c39b641364f8fce2fdc2ae6e0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\6fde794c39b641364f8fce2fdc2ae6e0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\25f4d536676dc2941fefcf256ae3807a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\25f4d536676dc2941fefcf256ae3807a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\416d8c72ab1175875495cee46a8e3190\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\416d8c72ab1175875495cee46a8e3190\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\caf02a89a2e1a55f945f6a0a37802f09\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\caf02a89a2e1a55f945f6a0a37802f09\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\072d8e08d0a9527c08faa66d5e790260\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\072d8e08d0a9527c08faa66d5e790260\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\120a62591c82b4f13a215b55a6911131\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\120a62591c82b4f13a215b55a6911131\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d10f943c945cd286724acdd77d3d2eee\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d10f943c945cd286724acdd77d3d2eee\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e95801c9cb1934b154c103b2a0132473\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e95801c9cb1934b154c103b2a0132473\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\858820f457e800f098ae1164700d8098\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\858820f457e800f098ae1164700d8098\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5566b98f903a67bb33af95c8bee0d3b5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5566b98f903a67bb33af95c8bee0d3b5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\85f4ed7fb0617e8950431b398119e3ef\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\85f4ed7fb0617e8950431b398119e3ef\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d352c650831b121bea81bc8a0f309edf\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\d352c650831b121bea81bc8a0f309edf\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\ef0654458dbe5d03c9a46e1138412e3f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\ef0654458dbe5d03c9a46e1138412e3f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a9de51fef7ccf926d3d318226ca3ace8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a9de51fef7ccf926d3d318226ca3ace8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\47b29480f68cc65e04b1dc6e0ef980d7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\47b29480f68cc65e04b1dc6e0ef980d7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\7d0a587db84c64cffe3298118978c0dc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\7d0a587db84c64cffe3298118978c0dc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\c3d3e6ae07abaafff16aa0a862efd397\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\c3d3e6ae07abaafff16aa0a862efd397\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e963029f20a84d4079508675e61d085c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\e963029f20a84d4079508675e61d085c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a2459c408815a95eebf60aec1b3a59cb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\a2459c408815a95eebf60aec1b3a59cb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\0a481b413a5c139bf99ba18f8498f348\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\0a481b413a5c139bf99ba18f8498f348\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5f8a0b79df4d2aa326889431495b5c8c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\nicoloso100\.gradle\caches\transforms-2\files-2.1\5f8a0b79df4d2aa326889431495b5c8c\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from C:\Users\nicoloso100\Documents\work\Proyectos\EFLApp\android\app\src\debug\AndroidManifest.xml:5:22-75
