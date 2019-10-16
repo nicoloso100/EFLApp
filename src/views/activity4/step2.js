@@ -94,12 +94,6 @@ import {primaryColor, bodyColor2} from '../colors';
  */
 
 const Step2 = () => {
-  const [step, setStep] = useState(getRandomItem());
-  const [result, setResult] = useState({
-    showModal: false,
-    isCorrect: null,
-  });
-
   const onCorrectClick = () => {
     setStep(getRandomItem());
     setResult({
@@ -135,6 +129,12 @@ const Step2 = () => {
     };
     return selectedItem;
   };
+
+  const [step, setStep] = useState(getRandomItem());
+  const [result, setResult] = useState({
+    showModal: false,
+    isCorrect: null,
+  });
 
   return (
     <View style={styles.container}>

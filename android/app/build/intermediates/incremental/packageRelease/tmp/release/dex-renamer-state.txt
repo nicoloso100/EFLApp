@@ -1,4 +1,4 @@
-#Sat Oct 05 22:03:23 COT 2019
+#Wed Oct 16 17:46:08 COT 2019
 base.0=C\:\\Users\\nicoloso100\\Documents\\work\\Proyectos\\EFLApp\\android\\app\\build\\intermediates\\transforms\\dexMerger\\release\\0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -11,6 +11,7 @@ import {Icon, Button} from 'react-native-elements';
 import Notification from '../../components/notification';
 import {step3Items} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
+import HomeButton from '../../components/HomeButton';
 
 const getRandomItem = () => {
   let selectedItem = step3Items[Math.floor(Math.random() * 7)];
@@ -83,7 +84,7 @@ const getRandomItem = () => {
  * Valida el resultado de la opción seleccionada, si es correcta o incorrecta y ejecuta la notificación
  */
 
-const Step3 = () => {
+const Step3 = ({navigation}) => {
   const [item, setItem] = useState(getRandomItem());
   const [text, setText] = useState('');
   const [resultHistory, setresultHistory] = useState([]);
@@ -122,6 +123,7 @@ const Step3 = () => {
 
   return (
     <View style={styles.container}>
+      <HomeButton navigate={navigation.navigate} />
       <Notification
         showModal={result.showModal}
         setShowModal={setShowModal}

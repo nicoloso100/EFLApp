@@ -13,6 +13,7 @@ import {Icon, Button} from 'react-native-elements';
 import Notification from '../../components/notification';
 import {step1List} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
+import HomeButton from '../../components/HomeButton';
 
 const randomArray = () => {
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
@@ -207,7 +208,7 @@ const getSampleArray = text => {
  * Compara la respuesta del usuario con la respuesta correcta
  */
 
-const Step3 = () => {
+const Step3 = ({navigation}) => {
   const [step, setStep] = useState(0);
   const [steps, setSteps] = useState(randomArray());
   const [array, setArray] = useState(getSampleArray(steps[step].text));
@@ -258,6 +259,7 @@ const Step3 = () => {
 
   return (
     <View style={styles.container}>
+      <HomeButton navigate={navigation.navigate} />
       <Notification
         showModal={result.showModal}
         setShowModal={setShowModal}

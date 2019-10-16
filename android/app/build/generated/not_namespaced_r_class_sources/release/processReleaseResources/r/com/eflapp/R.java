@@ -3183,18 +3183,20 @@ public final class R {
     public static final int src_assets_img_activity5_policeman=0x7f06008e;
     public static final int src_assets_img_activity5_singer=0x7f06008f;
     public static final int src_assets_img_activity5_worker=0x7f060090;
-    public static final int src_assets_img_correct=0x7f060091;
-    public static final int src_assets_img_home_calendar=0x7f060092;
-    public static final int src_assets_img_home_eflalogo=0x7f060093;
-    public static final int src_assets_img_home_engineer=0x7f060094;
-    public static final int src_assets_img_home_family=0x7f060095;
-    public static final int src_assets_img_home_identification=0x7f060096;
-    public static final int src_assets_img_home_lettering=0x7f060097;
-    public static final int src_assets_img_home_sunrise=0x7f060098;
-    public static final int src_assets_img_incorrect=0x7f060099;
-    public static final int src_assets_img_play=0x7f06009a;
-    public static final int tooltip_frame_dark=0x7f06009b;
-    public static final int tooltip_frame_light=0x7f06009c;
+    public static final int src_assets_img_activity7_mapcity=0x7f060091;
+    public static final int src_assets_img_correct=0x7f060092;
+    public static final int src_assets_img_home_calendar=0x7f060093;
+    public static final int src_assets_img_home_eflalogo=0x7f060094;
+    public static final int src_assets_img_home_engineer=0x7f060095;
+    public static final int src_assets_img_home_family=0x7f060096;
+    public static final int src_assets_img_home_identification=0x7f060097;
+    public static final int src_assets_img_home_lettering=0x7f060098;
+    public static final int src_assets_img_home_map=0x7f060099;
+    public static final int src_assets_img_home_sunrise=0x7f06009a;
+    public static final int src_assets_img_incorrect=0x7f06009b;
+    public static final int src_assets_img_play=0x7f06009c;
+    public static final int tooltip_frame_dark=0x7f06009d;
+    public static final int tooltip_frame_light=0x7f06009e;
   }
   public static final class id {
     public static final int ALT=0x7f070000;

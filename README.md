@@ -1423,9 +1423,163 @@ el apiKey es generado personal de una cuenta de google
 
 ---
 
-**src\views\activity6\step2.js**
+**src\views\activity7\step1.js**
+
+### 1. Step1
+
+<img src="./src/assets/documentation/7-step1.png" alt="drawing" width="400"/>
+
+Paso 1 de la séptima actividad: Ver posiciones de objetos en un mapa
+Variables:
+
+```javascript
+//Abre el modal de la imagen
+const [showModal, setShowModal] = useState(false);
+//Obtiene in item random de la lista
+const [step, setStep] = useState(getRandomItem());
+//Gestiona el resultado de la respuesta
+const [result, setResult] = useState({
+  showModal: false,
+  isCorrect: null,
+});
+```
+
+Recursos: se utiliza la lista Step2List del archivo de recursos
+Contiene como atributos un audio con el texto de una pregunta sobre la posición de un item en el mapa, y su respuesta
+
+```javascript
+step1List = [
+ {
+   audio: new Sound('', Sound.MAIN_BUNDLE),
+   text: 'Où se trouve le stade',
+   answerText: 'Le stade est derrière le parking',
+```
+
+---
+
+**src\views\activity7\step2.js**
 
 ### 1. Step2
+
+<img src="./src/assets/documentation/7-step2.png" alt="drawing" width="400"/>
+
+Paso 2 de la séptima actividad: Escribir la posición de un objeto en el mapa
+Variables:
+
+```javascript
+//Abre el modal de la imagen
+const [showModal, setShowModal] = useState(false);
+//Obtiene in item random de la lista
+const [step, setStep] = useState(getRandomItem());
+//Almacena el texto del ejercicio
+const [text, setText] = useState('');
+//Gestiona el resultado de la respuesta
+const [result, setResult] = useState({
+  showModal: false,
+  isCorrect: null,
+});
+```
+
+Recursos: se utiliza la lista Step2List del archivo de recursos
+Es una copia de step1List adicionando el atributo correctText, el cual indica el texto que el usuario debe escribir
+
+```javascript
+step2list = [
+ {...step1List[0], correctText: 'derrière'},
+```
+
+La función validateAnswer:
+
+```javascript
+const validateAnswer = () => {
+  if (text.toLowerCase() === step.correctText.toLowerCase()) {
+    setStep(getRandomItem());
+    setText('');
+    setResult({
+      showModal: true,
+      isCorrect: true,
+    });
+  } else {
+    setResult({
+      showModal: true,
+      isCorrect: false,
+    });
+  }
+};
+```
+
+La función splitText:
+
+```javascript
+const splitText = (text, split) => {
+  return text.split(split);
+};
+```
+
+Parte el texto quitando la respuesta para poner un campo de texto
+
+---
+
+**src\views\activity7\step3.js**
+
+### 1. Step3
+
+<img src="./src/assets/documentation/7-step3.png" alt="drawing" width="400"/>
+
+Paso 3 de la séptima actividad: Escribir el objeto en el mapa mediante una posición
+Variables:
+
+```javascript
+//Abre el modal de la imagen
+const [showModal, setShowModal] = useState(false);
+//Obtiene in item random de la lista
+const [step, setStep] = useState(getRandomItem());
+//Almacena el texto del ejercicio
+const [text, setText] = useState('');
+//Gestiona el resultado de la respuesta
+const [result, setResult] = useState({
+  showModal: false,
+  isCorrect: null,
+});
+```
+
+Recursos: se utiliza la lista Step2List del archivo de recursos
+Es una copia de step1List adicionando el atributo correctText, el cual indica el texto que el usuario debe escribir
+
+```javascript
+step3list = [
+ {...step1List[0], correctText: 'le parking'},
+```
+
+La función validateAnswer:
+
+```javascript
+const validateAnswer = () => {
+  if (text.toLowerCase() === step.correctText.toLowerCase()) {
+    setStep(getRandomItem());
+    setText('');
+    setResult({
+      showModal: true,
+      isCorrect: true,
+    });
+  } else {
+    setResult({
+      showModal: true,
+      isCorrect: false,
+    });
+  }
+};
+```
+
+La función splitText:
+
+```javascript
+const splitText = (text, split) => {
+  return text.split(split);
+};
+```
+
+Parte el texto quitando la respuesta para poner un campo de texto
 
 ---
 

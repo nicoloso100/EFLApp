@@ -7,6 +7,7 @@ import Activity3 from './src/views/activity3/activity3';
 import Activity4 from './src/views/activity4/activity4';
 import Activity5 from './src/views/activity5/activity5';
 import Activity6 from './src/views/activity6/activity6';
+import Activity7 from './src/views/activity7/activity7';
 
 const MainNavigator = createStackNavigator(
   {
@@ -17,6 +18,7 @@ const MainNavigator = createStackNavigator(
     Activity4: {screen: Activity4},
     Activity5: {screen: Activity5},
     Activity6: {screen: Activity6},
+    Activity7: {screen: Activity7},
   },
   {
     initialRouteName: 'Home',

@@ -46,6 +46,13 @@ const data = [
     navigate: 'Activity6',
     direction: 'row-reverse',
   },
+  {
+    icon: require('../assets/img/home/map.png'),
+    tittle: 'les lieux',
+    subTittle: 'Leçon 7',
+    navigate: 'Activity7',
+    direction: 'row',
+  },
 ];
 
 /**

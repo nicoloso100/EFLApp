@@ -13,6 +13,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Notification from '../../components/notification';
 import {scene2} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
+import HomeButton from '../../components/HomeButton';
 
 const InputsDialog1 = () => {
   const [answer1, setAnswer1] = useState('');
@@ -139,9 +140,10 @@ const InputsDialog2 = () => {
  Se encargan de mostrar y validar los campos de texto, junto a su botón de verificar
  */
 
-const Step3 = () => {
+const Step3 = ({navigation}) => {
   return (
     <View style={styles().container}>
+      <HomeButton navigate={navigation.navigate} />
       <View style={styles().card}>
         <Text style={styles().title}>Answer your name</Text>
       </View>

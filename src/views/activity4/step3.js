@@ -16,6 +16,7 @@ import {useState} from 'react';
 import Notification from '../../components/notification';
 import {step3list} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
+import HomeButton from '../../components/HomeButton';
 
 console.disableYellowBox = true;
 
@@ -84,7 +85,7 @@ const getRandomItem = () => {
  * Revisa la respuesta del usuario y ejecuta la notificación
  */
 
-const Step3 = () => {
+const Step3 = ({navigation}) => {
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState(getRandomItem());
   const [text, setText] = useState('');
@@ -115,6 +116,7 @@ const Step3 = () => {
 
   return (
     <View style={styles.container} onLayout={onLayout.bind(this)}>
+      <HomeButton navigate={navigation.navigate} />
       <Notification
         showModal={result.showModal}
         setShowModal={() => setResult({...result, showModal: false})}

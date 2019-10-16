@@ -6,7 +6,6 @@ import {
   Text,
   TouchableOpacity,
   Button,
-  TextInput,
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 

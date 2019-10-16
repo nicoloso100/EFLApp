@@ -667,6 +667,7 @@ drawable src_assets_img_activity5_plumber
 drawable src_assets_img_activity5_policeman
 drawable src_assets_img_activity5_singer
 drawable src_assets_img_activity5_worker
+drawable src_assets_img_activity7_mapcity
 drawable src_assets_img_correct
 drawable src_assets_img_home_calendar
 drawable src_assets_img_home_eflalogo
@@ -674,6 +675,7 @@ drawable src_assets_img_home_engineer
 drawable src_assets_img_home_family
 drawable src_assets_img_home_identification
 drawable src_assets_img_home_lettering
+drawable src_assets_img_home_map
 drawable src_assets_img_home_sunrise
 drawable src_assets_img_incorrect
 drawable src_assets_img_play

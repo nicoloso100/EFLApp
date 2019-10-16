@@ -1,3 +1,4 @@
+import React from 'react';
 import {createMaterialTopTabNavigator} from 'react-navigation';
 import Step1 from './step1';
 import Step2 from './step2';
@@ -9,13 +10,13 @@ const Activity6 = createMaterialTopTabNavigator(
     Step1: {
       screen: Step1,
       navigationOptions: {
-        tabBarIcon: () => NavIcon,
+        tabBarIcon: () => <NavIcon />,
       },
     },
     Step2: {
       screen: Step2,
       navigationOptions: {
-        tabBarIcon: () => NavIcon,
+        tabBarIcon: () => <NavIcon />,
       },
     },
   },
