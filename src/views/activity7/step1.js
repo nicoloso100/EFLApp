@@ -23,7 +23,7 @@ const TreeImage = ({setStyle}) => {
     <Image
       enableHorizontalBounce={true}
       style={setStyle}
-      source={require('../../assets/img/activity7/mapCity.jpg')}
+      source={require('../../assets/img/activity7/mapCity.png')}
     />
   );
 };
@@ -31,10 +31,11 @@ const TreeImage = ({setStyle}) => {
 const getRandomItem = last => {
   let randomPos = Math.floor(Math.random() * 8);
   if (last) {
-    while (step1List[randomPos] !== last) {
-      let selectedItem = step1List[randomPos];
-      return selectedItem;
+    while (step1List[randomPos] === last) {
+      randomPos = Math.floor(Math.random() * 8);
     }
+    let selectedItem = step1List[randomPos];
+    return selectedItem;
   } else {
     return step1List[randomPos];
   }
@@ -125,14 +126,24 @@ const Step1 = () => {
         </View>
         <View style={styles.answerContainer}>
           <Text style={styles.subText}>{step.answerText}</Text>
-          <TouchableOpacity onPress={() => setStep(getRandomItem(step))}>
-            <Icon
-              raised
-              name="random"
-              type="font-awesome"
-              color={primaryColor}
-            />
-          </TouchableOpacity>
+          <View style={styles.answerButtons}>
+            <TouchableOpacity onPress={() => step.answer.play()}>
+              <Icon
+                raised
+                name="play"
+                type="font-awesome"
+                color={primaryColor}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setStep(getRandomItem(step))}>
+              <Icon
+                raised
+                name="random"
+                type="font-awesome"
+                color={primaryColor}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -200,6 +211,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center',
     padding: 20,
+  },
+  answerButtons: {
+    flexDirection: 'row',
   },
 });
 

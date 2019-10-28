@@ -3440,8 +3440,26 @@ public final class R {
     public static final int activity5_1_7=0x7f0b004c;
     public static final int activity5_1_8=0x7f0b004d;
     public static final int activity5_1_9=0x7f0b004e;
-    public static final int correct=0x7f0b004f;
-    public static final int error=0x7f0b0050;
+    public static final int activity7_1_1=0x7f0b004f;
+    public static final int activity7_1_10=0x7f0b0050;
+    public static final int activity7_1_11=0x7f0b0051;
+    public static final int activity7_1_12=0x7f0b0052;
+    public static final int activity7_1_13=0x7f0b0053;
+    public static final int activity7_1_14=0x7f0b0054;
+    public static final int activity7_1_15=0x7f0b0055;
+    public static final int activity7_1_16=0x7f0b0056;
+    public static final int activity7_1_17=0x7f0b0057;
+    public static final int activity7_1_18=0x7f0b0058;
+    public static final int activity7_1_2=0x7f0b0059;
+    public static final int activity7_1_3=0x7f0b005a;
+    public static final int activity7_1_4=0x7f0b005b;
+    public static final int activity7_1_5=0x7f0b005c;
+    public static final int activity7_1_6=0x7f0b005d;
+    public static final int activity7_1_7=0x7f0b005e;
+    public static final int activity7_1_8=0x7f0b005f;
+    public static final int activity7_1_9=0x7f0b0060;
+    public static final int correct=0x7f0b0061;
+    public static final int error=0x7f0b0062;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0c0000;

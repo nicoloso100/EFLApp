@@ -25,7 +25,7 @@ const TreeImage = ({setStyle}) => {
     <Image
       enableHorizontalBounce={true}
       style={setStyle}
-      source={require('../../assets/img/activity7/mapCity.jpg')}
+      source={require('../../assets/img/activity7/mapCity.png')}
     />
   );
 };
@@ -183,12 +183,21 @@ const Step3 = ({navigation}) => {
             onChangeText={text => setText(text)}
           />
         </View>
-        <View style={styles.buttomColumn}>
-          <Button
-            buttonStyle={styles.optionButton}
-            title="vérifier"
-            onPress={() => validateAnswer()}
-          />
+        <View style={styles.buttonOptions}>
+          <View style={styles.buttomColumn}>
+            <Button
+              buttonStyle={styles.optionButton}
+              title="écoute"
+              onPress={() => step.answer.play()}
+            />
+          </View>
+          <View style={styles.buttomColumn}>
+            <Button
+              buttonStyle={styles.optionButton}
+              title="vérifier"
+              onPress={() => validateAnswer()}
+            />
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -246,6 +255,11 @@ const styles = StyleSheet.create({
   buttomColumn: {
     flex: 1,
     flexDirection: 'column',
+  },
+  buttonOptions: {
+    marginTop: 20,
+    marginBottom: 20,
+    flexDirection: 'row',
   },
   optionButton: {
     height: 60,
