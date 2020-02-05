@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity, ProgressBarAndroid} from 'react-native';
 
 /**
  * Componente de tarjeta con ícono y texto grande para listas
@@ -22,8 +22,7 @@ import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
  * ```
  */
 
-const ListIconTextBigCard = props => {
-  const {item, navigate, navigateRoute} = props;
+const ListIconTextBigCard = ({item, navigate, navigateRoute}) => {
   return (
     <TouchableOpacity onPress={() => navigate(navigateRoute)}>
       <View style={styles(item.direction).card}>
@@ -31,6 +30,12 @@ const ListIconTextBigCard = props => {
         <View style={styles().textContent}>
           <Text style={styles().title}>{item.tittle}</Text>
           <Text style={styles().subTittle}>{item.subTittle}</Text>
+          <ProgressBarAndroid
+            styleAttr="Horizontal"
+            indeterminate={false}
+            progress={0.5}
+            color="#368D00"
+          />
         </View>
       </View>
     </TouchableOpacity>
