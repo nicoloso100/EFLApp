@@ -81,7 +81,7 @@ import {bodyColor1} from '../colors';
  * Es una función recursiva que muestra los días rándom de la lista
  */
 
-const Step1 = () => {
+const Step1 = ({ navigation }) => {
   const [playing, setPlaying] = useState(false);
   const [optionPlaying, setoptionPlaying] = useState(false);
   const [dayLabel, setDayLabel] = useState('');

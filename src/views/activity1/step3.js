@@ -92,6 +92,8 @@ const Step3 = ({navigation}) => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(0);
+  const [incorrectValue, setIncorrectValue] = useState(0);
 
   const setShowModal = () => {
     setResult({...result, showModal: false});
@@ -103,6 +105,7 @@ const Step3 = ({navigation}) => {
         showModal: true,
         isCorrect: true,
       });
+      setCorrectValue(correctValue + 1);
       setItem(getRandomItem());
       setresultHistory(
         [
@@ -118,6 +121,7 @@ const Step3 = ({navigation}) => {
         showModal: true,
         isCorrect: false,
       });
+      setIncorrectValue(incorrectValue - 1);
     }
   };
 

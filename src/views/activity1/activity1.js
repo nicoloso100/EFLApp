@@ -1,5 +1,7 @@
 import React from 'react';
-import {createMaterialTopTabNavigator} from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
+
 import Step1 from './step1';
 import Step2 from './step2';
 import Step3 from './step3';
@@ -7,50 +9,75 @@ import Step4 from './step4';
 import {navBarColor} from '../colors';
 import {NavIcon} from '../../components/IconNav';
 
-const Activity1 = createMaterialTopTabNavigator(
-  {
-    Step1: {
-      screen: Step1,
-      navigationOptions: {
-        tabBarIcon: () => <NavIcon />,
+const ActivityMaterialTopTabNavigator = ({ navigation }) => {
+  const Activity1 = createAppContainer(
+    createMaterialTopTabNavigator(
+      {
+        Step1: {
+          screen: () => (
+            <Step1
+              navigation={navigation}
+            />
+          ),
+          navigationOptions: {
+            tabBarIcon: () => <NavIcon />,
+          },
+        },
+        Step2: {
+          screen: () => (
+            <Step2
+              navigation={navigation}
+            />
+          ),
+          navigationOptions: {
+            tabBarIcon: () => <NavIcon />,
+          },
+        },
+        Step3: {
+          screen: () => (
+            <Step3
+              navigation={navigation}
+            />
+          ),
+          navigationOptions: {
+            tabBarIcon: () => <NavIcon />,
+          },
+        },
+        Step4: {
+          screen: () => (
+            <Step4
+              navigation={navigation}
+            />
+          ),
+          navigationOptions: {
+            tabBarIcon: () => <NavIcon />,
+          },
+        },
       },
-    },
-    Step2: {
-      screen: Step2,
-      navigationOptions: {
-        tabBarIcon: () => <NavIcon />,
+      {
+        tabBarOnPress: ({ navigation, defaultHandler }) => {
+          console.log('onPress:', navigation.state.routeName);
+          defaultHandler()
+        },
+        tabBarOptions: {
+          style: {
+            minWidth: 60,
+            height: 45,
+            backgroundColor: navBarColor,
+          },
+          indicatorStyle: {
+            height: 5,
+            backgroundColor: '#B5C9E5',
+            borderRadius: 5,
+          },
+          showIcon: true,
+          showLabel: false,
+        },
+        tabBarPosition: 'bottom',
       },
-    },
-    Step3: {
-      screen: Step3,
-      navigationOptions: {
-        tabBarIcon: () => <NavIcon />,
-      },
-    },
-    Step4: {
-      screen: Step4,
-      navigationOptions: {
-        tabBarIcon: () => <NavIcon />,
-      },
-    },
-  },
-  {
-    tabBarOptions: {
-      style: {
-        minWidth: 60,
-        height: 45,
-        backgroundColor: navBarColor,
-      },
-      indicatorStyle: {
-        height: 5,
-        backgroundColor: '#B5C9E5',
-        borderRadius: 5,
-      },
-      showIcon: true,
-      showLabel: false,
-    },
-    tabBarPosition: 'bottom',
-  },
-);
+    )
+  );
+  return <Activity1 />;
+};
 
-export default Activity1;
+export default ActivityMaterialTopTabNavigator;

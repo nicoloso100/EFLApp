@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {Image} from 'react-native-elements';
@@ -106,12 +106,14 @@ const randomArray = () => {
  * Valida el resultado de la opción seleccionada, si es correcta o incorrecta y ejecuta la notificación
  */
 
-const Step2 = () => {
+const Step2 = ({ navigation }) => {
   const [options, setoptions] = useState(randomArray());
   const [result, setResult] = useState({
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(0);
+  const [incorrectValue, setIncorrectValue] = useState(0);
 
   const {optionSet, correct} = options;
 
@@ -124,8 +126,10 @@ const Step2 = () => {
     let correctOption = optionSet[correct];
     if (selection.id === correctOption.id) {
       isCorrect = true;
+      setCorrectValue(correctValue + 1);
     } else {
       isCorrect = false;
+      setIncorrectValue(incorrectValue + 1);
     }
     setResult({
       showModal: true,

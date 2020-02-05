@@ -24,9 +24,8 @@ const excercise = [
   }
 ];
 
-const Step4 = ({ navigation }) => {
+const Step7 = ({ navigation }) => {
   const onButtonClick = () => {
-    console.log(navigation.getParam('correct'))
     Alert.alert('Warning', 'Are you sure that want to continue?')
   }
 
@@ -71,4 +70,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Step4;
+export default Step7;
