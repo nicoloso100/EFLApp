@@ -1,4 +1,4 @@
-#Tue Feb 04 23:17:12 COT 2020
+#Wed Feb 05 15:39:59 COT 2020
 base.0=/Users/davidlecodes/Develop/Projects/Universidad/EFLApp/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,5 +1,5 @@
 import React from 'react';
-import {createMaterialTopTabNavigator} from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import Step1 from './step1';
 import {navBarColor} from '../colors';
 import {NavIcon} from '../../components/IconNav';

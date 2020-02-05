@@ -4,7 +4,7 @@
             "outputFile": "/Users/davidlecodes/Develop/Projects/Universidad/EFLApp/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/dffd177082fb2d6cebc3e715104d0c01/res/values-v16/values-v16.xml",
+                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/352eb027b9e0a038f349e26ed73e3f90/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/43f479a50477ba790c14cf2d003908e1/res/values-v16/values-v16.xml",
+                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/31e57e9e5cb891d780de68ca9a838bf1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

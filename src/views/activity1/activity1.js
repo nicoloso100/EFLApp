@@ -10,6 +10,7 @@ import {navBarColor} from '../colors';
 import {NavIcon} from '../../components/IconNav';
 
 const ActivityMaterialTopTabNavigator = ({ navigation }) => {
+
   const Activity1 = createAppContainer(
     createMaterialTopTabNavigator(
       {
@@ -55,10 +56,6 @@ const ActivityMaterialTopTabNavigator = ({ navigation }) => {
         },
       },
       {
-        tabBarOnPress: ({ navigation, defaultHandler }) => {
-          console.log('onPress:', navigation.state.routeName);
-          defaultHandler()
-        },
         tabBarOptions: {
           style: {
             minWidth: 60,
@@ -77,7 +74,9 @@ const ActivityMaterialTopTabNavigator = ({ navigation }) => {
       },
     )
   );
-  return <Activity1 />;
+  return (
+    <Activity1 />
+  );
 };
 
 export default ActivityMaterialTopTabNavigator;

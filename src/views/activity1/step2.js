@@ -114,12 +114,25 @@ const Step2 = ({ navigation }) => {
   });
   const [correctValue, setCorrectValue] = useState(0);
   const [incorrectValue, setIncorrectValue] = useState(0);
+  const [resultActivity, setResultActivity] = useState({});
 
   const {optionSet, correct} = options;
 
   const setShowModal = () => {
     setResult({...result, showModal: false});
   };
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('tabBarOnPress', e => {
+      // Prevent default behavior
+      console.log(e);
+      e.preventDefault();
+      // Do something manually
+      // ...
+    });
+  
+    return unsubscribe;
+  }, [navigation]);
 
   const select = selection => {
     let isCorrect = false;
@@ -134,6 +147,10 @@ const Step2 = ({ navigation }) => {
     setResult({
       showModal: true,
       isCorrect: isCorrect,
+    });
+    setResultActivity({
+      correct: correctValue,
+      incorrect: incorrectValue
     });
     setoptions(randomArray());
   };

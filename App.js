@@ -1,6 +1,7 @@
 import Home from './src/views/home';
 
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 import Activity1 from './src/views/activity1/activity1';
 import Activity2 from './src/views/activity2/activity2';
 import Activity3 from './src/views/activity3/activity3';

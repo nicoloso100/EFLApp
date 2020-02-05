@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
 import {Icon, Button} from 'react-native-elements';
 
@@ -26,7 +26,6 @@ const excercise = [
 
 const Step4 = ({ navigation }) => {
   const onButtonClick = () => {
-    console.log(navigation.getParam('correct'))
     Alert.alert('Warning', 'Are you sure that want to continue?')
   }
 
