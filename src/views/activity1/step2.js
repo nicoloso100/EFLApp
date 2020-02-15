@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import {Image} from 'react-native-elements';
 
@@ -112,9 +113,8 @@ const Step2 = ({ navigation }) => {
     showModal: false,
     isCorrect: null,
   });
-  const [correctValue, setCorrectValue] = useState(0);
-  const [incorrectValue, setIncorrectValue] = useState(0);
-  const [resultActivity, setResultActivity] = useState({});
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
   const {optionSet, correct} = options;
 
@@ -122,37 +122,28 @@ const Step2 = ({ navigation }) => {
     setResult({...result, showModal: false});
   };
 
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('tabBarOnPress', e => {
-      // Prevent default behavior
-      console.log(e);
-      e.preventDefault();
-      // Do something manually
-      // ...
-    });
-  
-    return unsubscribe;
-  }, [navigation]);
-
-  const select = selection => {
-    let isCorrect = false;
-    let correctOption = optionSet[correct];
-    if (selection.id === correctOption.id) {
-      isCorrect = true;
-      setCorrectValue(correctValue + 1);
-    } else {
-      isCorrect = false;
-      setIncorrectValue(incorrectValue + 1);
+  const select = async selection => {
+    try {
+      let isCorrect = false;
+      let correctOption = optionSet[correct];
+      if (selection.id === correctOption.id) {
+        isCorrect = true;
+        setCorrectValue(correctValue + 1);
+        await AsyncStorage.setItem('FirstActivityCorrect', JSON.stringify(correctValue));
+      } else {
+        isCorrect = false;
+        setIncorrectValue(incorrectValue + 1);
+        await AsyncStorage.setItem('FirstActivityIncorrect', JSON.stringify(correctValue));
+      }
+      setResult({
+        showModal: true,
+        isCorrect: isCorrect,
+      });
+      
+      setoptions(randomArray());
+    } catch (e) {
+      console.error(e);
     }
-    setResult({
-      showModal: true,
-      isCorrect: isCorrect,
-    });
-    setResultActivity({
-      correct: correctValue,
-      incorrect: incorrectValue
-    });
-    setoptions(randomArray());
   };
 
   return (

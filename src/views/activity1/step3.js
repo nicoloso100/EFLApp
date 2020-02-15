@@ -8,6 +8,8 @@ import {
   FlatList,
 } from 'react-native';
 import {Icon, Button} from 'react-native-elements';
+import AsyncStorage from '@react-native-community/async-storage';
+
 import Notification from '../../components/notification';
 import {step3Items} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
@@ -92,20 +94,21 @@ const Step3 = ({navigation}) => {
     showModal: false,
     isCorrect: null,
   });
-  const [correctValue, setCorrectValue] = useState(0);
-  const [incorrectValue, setIncorrectValue] = useState(0);
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
   const setShowModal = () => {
     setResult({...result, showModal: false});
   };
 
-  const onButtonClick = () => {
+  const onButtonClick = async () => {
     if (item.result === text.toLowerCase()) {
       setResult({
         showModal: true,
         isCorrect: true,
       });
       setCorrectValue(correctValue + 1);
+      await AsyncStorage.setItem('SecondActivityCorrect', JSON.stringify(correctValue));
       setItem(getRandomItem());
       setresultHistory(
         [
@@ -121,7 +124,8 @@ const Step3 = ({navigation}) => {
         showModal: true,
         isCorrect: false,
       });
-      setIncorrectValue(incorrectValue - 1);
+      setIncorrectValue(incorrectValue + 1);
+      await AsyncStorage.setItem('SecondActivityIncorrect', JSON.stringify(incorrectValue));
     }
   };
 
