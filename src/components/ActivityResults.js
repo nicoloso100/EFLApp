@@ -8,14 +8,14 @@ import { View, Text, StyleSheet } from 'react-native';
  */
 const ActivityRestults = ({ excercise }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>Resultados de las actividades:</Text>
+    <Text style={styles.text}>Résultats des activités:</Text>
     {
       excercise.map((item, key) => (
         <View style={styles.excerciseWrapper}>
-          <Text>Ejercicio {key + 1}:</Text>
+          <Text>Exercice {key + 1}:</Text>
           <View style={styles.textWrapper}>
-            <Text> - {item.correct} correctos</Text>
-            <Text> - {item.incorrect} incorrectos</Text>
+            <Text> - {item.correct} correcte</Text>
+            <Text> - {item.incorrect} incorrecte</Text>
           </View>
         </View>
       ))
