@@ -8,19 +8,23 @@ import { View, Text, StyleSheet } from 'react-native';
  */
 const ActivityRestults = ({ excercise }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>Résultats des activités:</Text>
-    {
-      excercise.map((item, key) => (
-        <View style={styles.excerciseWrapper}>
-          <Text>Exercice {key + 1}:</Text>
-          <View style={styles.textWrapper}>
-            <Text> - {item.correct} correcte</Text>
-            <Text> - {item.incorrect} incorrecte</Text>
-          </View>
-        </View>
-      ))
+    {excercise.length === 0
+      ? <Text>Aucun résultat chargé, veuillez balayer vers le bas pour actualiser.</Text>
+      : <>
+          <Text style={styles.text}>Résultats des activités:</Text>
+          {
+            excercise.map((item, key) => (
+              <View style={styles.excerciseWrapper}>
+                <Text>Exercice {key + 1}:</Text>
+                <View style={styles.textWrapper}>
+                  <Text> - {item.correct} correcte</Text>
+                  <Text> - {item.incorrect} incorrecte</Text>
+                </View>
+              </View>
+            ))
+          }
+        </>
     }
-    
   </View>
 );
 
