@@ -49,6 +49,11 @@ const Step4 = ({ navigation }) => {
       const secondActivityCorrect = await AsyncStorage.getItem('SecondActivityCorrect');
       const secondActivityIncorrect = await AsyncStorage.getItem('SecondActivityIncorrect');
 
+      let AllCorrectResults = parseInt(firstActivityCorrect !== null ? firstActivityCorrect : '0') + parseInt(secondActivityCorrect !== null ? secondActivityCorrect : '0');
+      let AllIncorrectResults = parseInt(firstActivityIncorrect !== null ? firstActivityIncorrect : '0') + parseInt(secondActivityIncorrect !== null ? secondActivityIncorrect : '0');
+      await AsyncStorage.setItem('FirstLessonCorrectResults', JSON.stringify(AllCorrectResults));
+      await AsyncStorage.setItem('FirstLessonIncorrectResults', JSON.stringify(AllIncorrectResults));
+
       setAllResults([
         {
           id: 1,
