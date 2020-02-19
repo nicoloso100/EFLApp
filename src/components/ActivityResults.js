@@ -14,7 +14,7 @@ const ActivityRestults = ({ excercise }) => (
           <Text style={styles.text}>Résultats des activités:</Text>
           {
             excercise.map((item, key) => (
-              <View style={styles.excerciseWrapper}>
+              <View key={key} style={styles.excerciseWrapper}>
                 <Text>Exercice {key + 1}:</Text>
                 <View style={styles.textWrapper}>
                   <Text> - {item.correct} correcte</Text>
