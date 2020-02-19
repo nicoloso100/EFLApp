@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity, ProgressBarAndroid} from 'react-native';
 
 /**
@@ -23,6 +23,19 @@ import {View, StyleSheet, Text, Image, TouchableOpacity, ProgressBarAndroid} fro
  */
 
 const ListIconTextBigCard = ({item, navigate, navigateRoute}) => {
+  const [percentageResult, setPercentageResult] = useState(0);
+
+  const getPercentage = (correctValue, incorrectValue) => {
+    let generalResult = correctValue + incorrectValue;
+    let maximumValue = 1;
+    let FinalResult = (correctValue * maximumValue) / generalResult;
+    setPercentageResult(FinalResult);
+  }
+
+  useEffect(() => {
+    getPercentage(item.correct, item.incorrect);
+  }, []);
+
   return (
     <TouchableOpacity onPress={() => navigate(navigateRoute)}>
       <View style={styles(item.direction).card}>
@@ -33,7 +46,7 @@ const ListIconTextBigCard = ({item, navigate, navigateRoute}) => {
           <ProgressBarAndroid
             styleAttr="Horizontal"
             indeterminate={false}
-            progress={0.5}
+            progress={percentageResult}
             color="#368D00"
           />
         </View>
