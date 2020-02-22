@@ -54,7 +54,9 @@ const ListIconTextBigCard = ({item, navigate, navigateRoute}) => {
               name="like1"
               color="#368D00"
               size={20}
-            />
+            >
+              <Text>{item.correct}</Text>
+            </Icon>
             <ProgressBarAndroid
               styleAttr="Horizontal"
               indeterminate={false}
@@ -65,7 +67,9 @@ const ListIconTextBigCard = ({item, navigate, navigateRoute}) => {
               name="dislike1"
               color="#860000"
               size={20}
-            />
+            >
+              <Text>{item.incorrect}</Text>
+            </Icon>
           </View>
         </View>
       </View>
@@ -103,6 +107,7 @@ const styles = direction =>
     },
     progressContainer: {
       flexDirection: 'row',
+      alignSelf: 'stretch',
     }
   });
 
