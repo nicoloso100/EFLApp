@@ -4,73 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import ListIconTextBigCard from '../components/listIconTextBigCard';
 import {navBarColor} from './colors';
-import { getResultsFirstActivity } from '../utils/activitiesResults';
-
-const data = [
-  {
-    icon: require('../assets/img/home/calendar.png'),
-    tittle: 'Les jours de la semaine',
-    subTittle: 'Leçon 1',
-    navigate: 'Activity1',
-    direction: 'row',
-    correct: 5,
-    incorrect: 5
-  },
-  {
-    icon: require('../assets/img/home/sunrise.png'),
-    tittle: 'La journée',
-    subTittle: 'Leçon 2',
-    navigate: 'Activity2',
-    direction: 'row-reverse',
-    correct: 7,
-    incorrect: 5
-  },
-  {
-    icon: require('../assets/img/home/identification.png'),
-    tittle: 'Comment vous vous appelez?',
-    subTittle: 'Leçon 3',
-    navigate: 'Activity3',
-    direction: 'row',
-    correct: 1,
-    incorrect: 5
-  },
-  {
-    icon: require('../assets/img/home/family.png'),
-    tittle: 'La famille',
-    subTittle: 'Leçon 4',
-    navigate: 'Activity4',
-    direction: 'row-reverse',
-    correct: 10,
-    incorrect: 0
-  },
-  {
-    icon: require('../assets/img/home/engineer.png'),
-    tittle: 'Les mètiers',
-    subTittle: 'Leçon 5',
-    navigate: 'Activity5',
-    direction: 'row',
-    correct: 0,
-    incorrect: 12
-  },
-  {
-    icon: require('../assets/img/home/lettering.png'),
-    tittle: 'Verbes être et avoir',
-    subTittle: 'Leçon 6',
-    navigate: 'Activity6',
-    direction: 'row-reverse',
-    correct: 1,
-    incorrect: 1
-  },
-  {
-    icon: require('../assets/img/home/map.png'),
-    tittle: 'les lieux',
-    subTittle: 'Leçon 7',
-    navigate: 'Activity7',
-    direction: 'row',
-    correct: 9,
-    incorrect: 20
-  },
-];
+import { getResultsFirstActivity, getResultsSecondActivity, getResultsThirdActivity } from '../utils/activitiesResults';
 
 /**
 * Menú principal que establece la navegación hacia las actividades
@@ -110,7 +44,11 @@ const Home = props => {
       const stateHandler = async () => {
         const Lesson1Correct = (await getResultsFirstActivity()).summarized.allCorrectResults;
         const Lesson1Incorrect = (await getResultsFirstActivity()).summarized.allIncorrectResults;
-  
+        const Lesson2Correct = (await getResultsSecondActivity()).summarized.allCorrectResults;
+        const Lesson2Incorrect = (await getResultsSecondActivity()).summarized.allIncorrectResults;
+        const Lesson3Correct = (await getResultsThirdActivity()).summarized.allCorrectResults;
+        const Lesson3Incorrect = (await getResultsThirdActivity()).summarized.allIncorrectResults;
+
         setFullData([
           {
             icon: require('../assets/img/home/calendar.png'),
@@ -127,8 +65,8 @@ const Home = props => {
             subTittle: 'Leçon 2',
             navigate: 'Activity2',
             direction: 'row-reverse',
-            correct: 7,
-            incorrect: 0
+            correct: Lesson2Correct,
+            incorrect: Lesson2Incorrect
           },
           {
             icon: require('../assets/img/home/identification.png'),
@@ -136,8 +74,8 @@ const Home = props => {
             subTittle: 'Leçon 3',
             navigate: 'Activity3',
             direction: 'row',
-            correct: 1,
-            incorrect: 5
+            correct: Lesson3Correct,
+            incorrect: Lesson3Incorrect
           },
           {
             icon: require('../assets/img/home/family.png'),
@@ -186,6 +124,10 @@ const Home = props => {
     const stateHandler = async () => {
       const Lesson1Correct = (await getResultsFirstActivity()).summarized.allCorrectResults;
       const Lesson1Incorrect = (await getResultsFirstActivity()).summarized.allIncorrectResults;
+      const Lesson2Correct = (await getResultsSecondActivity()).summarized.allCorrectResults;
+      const Lesson2Incorrect = (await getResultsSecondActivity()).summarized.allIncorrectResults;
+      const Lesson3Correct = (await getResultsThirdActivity()).summarized.allCorrectResults;
+      const Lesson3Incorrect = (await getResultsThirdActivity()).summarized.allIncorrectResults;
 
       setFullData([
         {
@@ -203,8 +145,8 @@ const Home = props => {
           subTittle: 'Leçon 2',
           navigate: 'Activity2',
           direction: 'row-reverse',
-          correct: 7,
-          incorrect: 0
+          correct: Lesson2Correct,
+          incorrect: Lesson2Incorrect
         },
         {
           icon: require('../assets/img/home/identification.png'),
@@ -212,8 +154,8 @@ const Home = props => {
           subTittle: 'Leçon 3',
           navigate: 'Activity3',
           direction: 'row',
-          correct: 1,
-          incorrect: 5
+          correct: Lesson3Correct,
+          incorrect: Lesson3Incorrect
         },
         {
           icon: require('../assets/img/home/family.png'),
