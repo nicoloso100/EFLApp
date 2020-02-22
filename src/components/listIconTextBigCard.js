@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity, ProgressBarAndroid} from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 /**
  * Componente de tarjeta con ícono y texto grande para listas
@@ -28,8 +29,13 @@ const ListIconTextBigCard = ({item, navigate, navigateRoute}) => {
   const getPercentage = (correctValue, incorrectValue) => {
     let generalResult = correctValue + incorrectValue;
     let maximumValue = 1;
-    let FinalResult = (correctValue * maximumValue) / generalResult;
-    setPercentageResult(FinalResult);
+    if (generalResult !== 0) {
+      let FinalResult = (correctValue * maximumValue) / generalResult;
+      setPercentageResult(FinalResult);
+    } else {
+      let FinalResult = (correctValue * maximumValue) / 1;
+      setPercentageResult(FinalResult);
+    }
   }
 
   useEffect(() => {
@@ -43,12 +49,24 @@ const ListIconTextBigCard = ({item, navigate, navigateRoute}) => {
         <View style={styles().textContent}>
           <Text style={styles().title}>{item.tittle}</Text>
           <Text style={styles().subTittle}>{item.subTittle}</Text>
-          <ProgressBarAndroid
-            styleAttr="Horizontal"
-            indeterminate={false}
-            progress={percentageResult}
-            color="#368D00"
-          />
+          <View style={styles().progressContainer}>
+            <Icon
+              name="like1"
+              color="#368D00"
+              size={20}
+            />
+            <ProgressBarAndroid
+              styleAttr="Horizontal"
+              indeterminate={false}
+              progress={percentageResult}
+              color="#368D00"
+            />
+            <Icon
+              name="dislike1"
+              color="#860000"
+              size={20}
+            />
+          </View>
         </View>
       </View>
     </TouchableOpacity>
@@ -83,6 +101,9 @@ const styles = direction =>
       fontSize: 12,
       fontFamily: 'Quicksand',
     },
+    progressContainer: {
+      flexDirection: 'row',
+    }
   });
 
 export default ListIconTextBigCard;

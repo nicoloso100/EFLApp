@@ -6,24 +6,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { bodyColor1 } from '../colors';
 import HomeButton from '../../components/HomeButton';
 import ActivityResults from '../../components/ActivityResults';
-
-const excercise = [
-  {
-    id: 1,
-    correct: 3,
-    incorrect: 5
-  },
-  {
-    id: 2,
-    correct: 1,
-    incorrect: 3
-  },
-  {
-    id: 3,
-    correct: 9,
-    incorrect: 1
-  }
-];
+import { getResultsFirstActivity } from '../../utils/activitiesResults';
 
 const Step4 = ({ navigation }) => {
   const [refreshing, setRefreshing] = useState(false);
@@ -44,15 +27,12 @@ const Step4 = ({ navigation }) => {
     setRefreshing(true);
 
     wait(200).then(async () => {
-      const firstActivityCorrect = await AsyncStorage.getItem('FirstActivityCorrect');
-      const firstActivityIncorrect = await AsyncStorage.getItem('FirstActivityIncorrect');
-      const secondActivityCorrect = await AsyncStorage.getItem('SecondActivityCorrect');
-      const secondActivityIncorrect = await AsyncStorage.getItem('SecondActivityIncorrect');
 
-      let AllCorrectResults = parseInt(firstActivityCorrect !== null ? firstActivityCorrect : '0') + parseInt(secondActivityCorrect !== null ? secondActivityCorrect : '0');
-      let AllIncorrectResults = parseInt(firstActivityIncorrect !== null ? firstActivityIncorrect : '0') + parseInt(secondActivityIncorrect !== null ? secondActivityIncorrect : '0');
-      await AsyncStorage.setItem('FirstLessonCorrectResults', JSON.stringify(AllCorrectResults));
-      await AsyncStorage.setItem('FirstLessonIncorrectResults', JSON.stringify(AllIncorrectResults));
+      let detailed = (await getResultsFirstActivity()).detailed;
+      const firstActivityCorrect = detailed.firstActivityCorrect;
+      const firstActivityIncorrect = detailed.firstActivityIncorrect;
+      const secondActivityCorrect = detailed.secondActivityCorrect;
+      const secondActivityIncorrect = detailed.secondActivityIncorrect;
 
       setAllResults([
         {

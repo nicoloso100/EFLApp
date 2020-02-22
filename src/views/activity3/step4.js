@@ -19,17 +19,11 @@ const InputsDialog1 = () => {
   const [text, setText] = useState('start');
 
   const startRecord = () => {
-    SoundRecorder.start(SoundRecorder.PATH_CACHE + '/test.mp4').then(
-      function() {
-        console.log('grabando');
-      },
-    );
   };
 
   const stopRecord = () => {
     SoundRecorder.stop().then(function(result) {
       let path = result.path;
-      console.log(path);
       new Sound(path, Sound.MAIN_BUNDLE).play();
     });
   };

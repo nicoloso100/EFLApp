@@ -1,7 +1,10 @@
-import React from 'react';
-import {Image, FlatList, StyleSheet, View, Text} from 'react-native';
+import React, { useEffect, useState, useCallback } from 'react';
+import {Image, FlatList, StyleSheet, View, Text, RefreshControl} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+
 import ListIconTextBigCard from '../components/listIconTextBigCard';
 import {navBarColor} from './colors';
+import { getResultsFirstActivity } from '../utils/activitiesResults';
 
 const data = [
   {
@@ -10,6 +13,8 @@ const data = [
     subTittle: 'Leçon 1',
     navigate: 'Activity1',
     direction: 'row',
+    correct: 5,
+    incorrect: 5
   },
   {
     icon: require('../assets/img/home/sunrise.png'),
@@ -17,6 +22,8 @@ const data = [
     subTittle: 'Leçon 2',
     navigate: 'Activity2',
     direction: 'row-reverse',
+    correct: 7,
+    incorrect: 5
   },
   {
     icon: require('../assets/img/home/identification.png'),
@@ -24,6 +31,8 @@ const data = [
     subTittle: 'Leçon 3',
     navigate: 'Activity3',
     direction: 'row',
+    correct: 1,
+    incorrect: 5
   },
   {
     icon: require('../assets/img/home/family.png'),
@@ -31,6 +40,8 @@ const data = [
     subTittle: 'Leçon 4',
     navigate: 'Activity4',
     direction: 'row-reverse',
+    correct: 10,
+    incorrect: 0
   },
   {
     icon: require('../assets/img/home/engineer.png'),
@@ -38,6 +49,8 @@ const data = [
     subTittle: 'Leçon 5',
     navigate: 'Activity5',
     direction: 'row',
+    correct: 0,
+    incorrect: 12
   },
   {
     icon: require('../assets/img/home/lettering.png'),
@@ -45,6 +58,8 @@ const data = [
     subTittle: 'Leçon 6',
     navigate: 'Activity6',
     direction: 'row-reverse',
+    correct: 1,
+    incorrect: 1
   },
   {
     icon: require('../assets/img/home/map.png'),
@@ -52,6 +67,8 @@ const data = [
     subTittle: 'Leçon 7',
     navigate: 'Activity7',
     direction: 'row',
+    correct: 9,
+    incorrect: 20
   },
 ];
 
@@ -76,6 +93,175 @@ const data = [
  */
 
 const Home = props => {
+  const [fullData, setFullData] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+  const [newFullData, setNewFullData] = useState([]);
+ 
+
+  const wait = (timeout) => {
+    return new Promise(resolve => {
+      setTimeout(resolve, timeout);
+    });
+  }
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    wait(200).then(async () => {
+      const stateHandler = async () => {
+        const Lesson1Correct = (await getResultsFirstActivity()).summarized.allCorrectResults;
+        const Lesson1Incorrect = (await getResultsFirstActivity()).summarized.allIncorrectResults;
+  
+        setFullData([
+          {
+            icon: require('../assets/img/home/calendar.png'),
+            tittle: 'Les jours de la semaine',
+            subTittle: 'Leçon 1',
+            navigate: 'Activity1',
+            direction: 'row',
+            correct: Lesson1Correct,
+            incorrect: Lesson1Incorrect
+          },
+          {
+            icon: require('../assets/img/home/sunrise.png'),
+            tittle: 'La journée',
+            subTittle: 'Leçon 2',
+            navigate: 'Activity2',
+            direction: 'row-reverse',
+            correct: 7,
+            incorrect: 0
+          },
+          {
+            icon: require('../assets/img/home/identification.png'),
+            tittle: 'Comment vous vous appelez?',
+            subTittle: 'Leçon 3',
+            navigate: 'Activity3',
+            direction: 'row',
+            correct: 1,
+            incorrect: 5
+          },
+          {
+            icon: require('../assets/img/home/family.png'),
+            tittle: 'La famille',
+            subTittle: 'Leçon 4',
+            navigate: 'Activity4',
+            direction: 'row-reverse',
+            correct: 10,
+            incorrect: 0
+          },
+          {
+            icon: require('../assets/img/home/engineer.png'),
+            tittle: 'Les mètiers',
+            subTittle: 'Leçon 5',
+            navigate: 'Activity5',
+            direction: 'row',
+            correct: 0,
+            incorrect: 12
+          },
+          {
+            icon: require('../assets/img/home/lettering.png'),
+            tittle: 'Verbes être et avoir',
+            subTittle: 'Leçon 6',
+            navigate: 'Activity6',
+            direction: 'row-reverse',
+            correct: 1,
+            incorrect: 1
+          },
+          {
+            icon: require('../assets/img/home/map.png'),
+            tittle: 'les lieux',
+            subTittle: 'Leçon 7',
+            navigate: 'Activity7',
+            direction: 'row',
+            correct: 9,
+            incorrect: 20
+          },
+        ]);
+      }
+      stateHandler();
+      setRefreshing(false);
+    });
+  }, [refreshing]);
+
+  useEffect(() => {
+    const stateHandler = async () => {
+      const Lesson1Correct = (await getResultsFirstActivity()).summarized.allCorrectResults;
+      const Lesson1Incorrect = (await getResultsFirstActivity()).summarized.allIncorrectResults;
+
+      setFullData([
+        {
+          icon: require('../assets/img/home/calendar.png'),
+          tittle: 'Les jours de la semaine',
+          subTittle: 'Leçon 1',
+          navigate: 'Activity1',
+          direction: 'row',
+          correct: Lesson1Correct,
+          incorrect: Lesson1Incorrect
+        },
+        {
+          icon: require('../assets/img/home/sunrise.png'),
+          tittle: 'La journée',
+          subTittle: 'Leçon 2',
+          navigate: 'Activity2',
+          direction: 'row-reverse',
+          correct: 7,
+          incorrect: 0
+        },
+        {
+          icon: require('../assets/img/home/identification.png'),
+          tittle: 'Comment vous vous appelez?',
+          subTittle: 'Leçon 3',
+          navigate: 'Activity3',
+          direction: 'row',
+          correct: 1,
+          incorrect: 5
+        },
+        {
+          icon: require('../assets/img/home/family.png'),
+          tittle: 'La famille',
+          subTittle: 'Leçon 4',
+          navigate: 'Activity4',
+          direction: 'row-reverse',
+          correct: 10,
+          incorrect: 0
+        },
+        {
+          icon: require('../assets/img/home/engineer.png'),
+          tittle: 'Les mètiers',
+          subTittle: 'Leçon 5',
+          navigate: 'Activity5',
+          direction: 'row',
+          correct: 0,
+          incorrect: 12
+        },
+        {
+          icon: require('../assets/img/home/lettering.png'),
+          tittle: 'Verbes être et avoir',
+          subTittle: 'Leçon 6',
+          navigate: 'Activity6',
+          direction: 'row-reverse',
+          correct: 1,
+          incorrect: 1
+        },
+        {
+          icon: require('../assets/img/home/map.png'),
+          tittle: 'les lieux',
+          subTittle: 'Leçon 7',
+          navigate: 'Activity7',
+          direction: 'row',
+          correct: 9,
+          incorrect: 20
+        },
+      ]);
+    }
+    stateHandler()
+  }, []);
+
+  useEffect(() => {
+    if (fullData.length) {
+      console.log('Full Data', fullData);
+    }
+  }, [fullData]);
+
   return (
     <View style={styles.container}>
       <View style={styles.head}>
@@ -91,8 +277,14 @@ const Home = props => {
       <View style={styles.body}>
         <FlatList
           style={styles.list}
-          data={data}
+          data={fullData}
           keyExtractor={item => item.tittle}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+            />
+          }
           renderItem={({item}) => (
             <ListIconTextBigCard
               item={item}

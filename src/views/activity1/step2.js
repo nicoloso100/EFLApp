@@ -8,6 +8,7 @@ import ListTextCard from '../../components/listTextCard';
 import Notification from '../../components/notification';
 import {step2List} from './resources';
 import {bodyColor2} from '../colors';
+import { getResultsFirstActivity } from '../../utils/activitiesResults';
 
 const randomArray = () => {
   let array = [0, 1, 2, 3, 4, 5, 6];
@@ -118,6 +119,15 @@ const Step2 = ({ navigation }) => {
 
   const {optionSet, correct} = options;
 
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsFirstActivity()).detailed;
+      setCorrectValue(detailed.firstActivityCorrect + 1)
+      setIncorrectValue(detailed.firstActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, [])
+
   const setShowModal = () => {
     setResult({...result, showModal: false});
   };
@@ -133,7 +143,7 @@ const Step2 = ({ navigation }) => {
       } else {
         isCorrect = false;
         setIncorrectValue(incorrectValue + 1);
-        await AsyncStorage.setItem('FirstActivityIncorrect', JSON.stringify(correctValue));
+        await AsyncStorage.setItem('FirstActivityIncorrect', JSON.stringify(incorrectValue));
       }
       setResult({
         showModal: true,
