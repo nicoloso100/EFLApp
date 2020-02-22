@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -9,11 +9,13 @@ import {
   TextInput,
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Notification from '../../components/notification';
 import {scene2} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
 import HomeButton from '../../components/HomeButton';
+import { getResultsThirdActivity } from '../../utils/activitiesResults';
 
 const InputsDialog1 = () => {
   const [answer1, setAnswer1] = useState('');
@@ -22,19 +24,36 @@ const InputsDialog1 = () => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
-  const checkAnswers = () => {
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsThirdActivity()).detailed;
+      setCorrectValue(detailed.firstActivityCorrect + 1)
+      setIncorrectValue(detailed.firstActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
+
+  const checkAnswers = async () => {
     let correct = true;
     if (answer1.toLowerCase() !== "m'appelle") {
       correct = false;
+      setIncorrectValue(incorrectValue + 1);
+      await AsyncStorage.setItem('ThirdActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
     }
     if (answer2.toLowerCase() !== 'vous') {
       correct = false;
+      setIncorrectValue(incorrectValue + 1);
+      //await AsyncStorage.setItem('ThirdActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
     }
     setResult({
       showModal: true,
       isCorrect: correct,
     });
+    setCorrectValue(correctValue + 1);
+    await AsyncStorage.setItem('ThirdActivityFirstStepCorrect', JSON.stringify(correctValue));
   };
 
   const setShowModal = () => {
