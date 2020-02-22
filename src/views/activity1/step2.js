@@ -126,7 +126,7 @@ const Step2 = ({ navigation }) => {
       setIncorrectValue(detailed.firstActivityIncorrect + 1)
     };
     asyncUseEffect();
-  }, [])
+  }, []);
 
   const setShowModal = () => {
     setResult({...result, showModal: false});

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Text,
   StyleSheet,
@@ -14,6 +14,7 @@ import Notification from '../../components/notification';
 import {step3Items} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
 import HomeButton from '../../components/HomeButton';
+import { getResultsFirstActivity } from '../../utils/activitiesResults';
 
 const getRandomItem = () => {
   let selectedItem = step3Items[Math.floor(Math.random() * 7)];
@@ -96,6 +97,15 @@ const Step3 = ({navigation}) => {
   });
   const [correctValue, setCorrectValue] = useState(1);
   const [incorrectValue, setIncorrectValue] = useState(1);
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsFirstActivity()).detailed;
+      setCorrectValue(detailed.secondActivityCorrect + 1)
+      setIncorrectValue(detailed.secondActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
 
   const setShowModal = () => {
     setResult({...result, showModal: false});
