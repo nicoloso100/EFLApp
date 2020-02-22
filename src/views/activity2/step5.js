@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Image} from 'react-native-elements';
 import {ScrollView} from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Notification from '../../components/notification';
 import ListIconCard from '../../components/ListIconCard';
 import {steps4} from './resources';
 import {bodyColor1} from '../colors';
+import { getResultsSecondActivity } from '../../utils/activitiesResults';
 
 const randomArray = () => {
   let array = [0, 1, 2];
@@ -100,20 +102,35 @@ const Step5 = () => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
   const {optionSet, correct} = options;
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsSecondActivity()).detailed;
+      setCorrectValue(detailed.secondActivityCorrect + 1)
+      setIncorrectValue(detailed.secondActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
 
   const setShowModal = () => {
     setResult({...result, showModal: false});
   };
 
-  const select = selection => {
+  const select = async selection => {
     let isCorrect = false;
     let correctOption = optionSet[correct];
     if (selection.title === correctOption.title) {
       isCorrect = true;
+      setCorrectValue(correctValue + 1);
+      await AsyncStorage.setItem('SecondActivitySecondStepCorrect', JSON.stringify(correctValue));
     } else {
       isCorrect = false;
+      setIncorrectValue(incorrectValue + 1);
+      await AsyncStorage.setItem('SecondActivitySecondStepIncorrect', JSON.stringify(incorrectValue));
     }
     setResult({
       showModal: true,

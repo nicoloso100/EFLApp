@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   TouchableOpacity,
@@ -7,11 +7,13 @@ import {
   TextInput,
 } from 'react-native';
 import {Icon, Button} from 'react-native-elements';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Notification from '../../components/notification';
 import {steps6} from './resources';
 import {primaryColor, bodyColor2} from '../colors';
 import HomeButton from '../../components/HomeButton';
+import { getResultsSecondActivity } from '../../utils/activitiesResults';
 
 const randomArray = () => {
   let array = [0, 1, 2, 3];
@@ -214,6 +216,17 @@ const Step6 = ({navigation}) => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsSecondActivity()).detailed;
+      setCorrectValue(detailed.thirdActivityCorrect + 1)
+      setIncorrectValue(detailed.thirdActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
 
   const onButtonClick = () => {
     let isCorrect = false;
