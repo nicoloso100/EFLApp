@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   StyleSheet,
@@ -8,11 +8,12 @@ import {
   Text,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
-import {useState} from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Notification from '../../components/notification';
 import {Step2List} from './resources';
 import {primaryColor, bodyColor2} from '../colors';
+import { getResultsFourthtActivity } from '../../utils/activitiesResults';
 
 /**
  * Paso 2 de la primera actividad: Seleccionar la respuesta correcta mediante un audio
@@ -94,19 +95,26 @@ import {primaryColor, bodyColor2} from '../colors';
  */
 
 const Step2 = () => {
-  const onCorrectClick = () => {
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
+
+  const onCorrectClick = async () => {
     setStep(getRandomItem());
     setResult({
       showModal: true,
       isCorrect: true,
     });
+    setCorrectValue(correctValue + 1);
+    await AsyncStorage.setItem('FourthActivityFirstStepCorrect', JSON.stringify(correctValue));
   };
 
-  const onInCorrectClick = () => {
+  const onInCorrectClick = async () => {
     setResult({
       showModal: true,
       isCorrect: false,
     });
+    setIncorrectValue(incorrectValue + 1);
+    await AsyncStorage.setItem('FourthActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
   };
 
   const getRandomItem = () => {
@@ -135,6 +143,15 @@ const Step2 = () => {
     showModal: false,
     isCorrect: null,
   });
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsFourthtActivity()).detailed;
+      setCorrectValue(detailed.firstActivityCorrect + 1)
+      setIncorrectValue(detailed.firstActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
 
   return (
     <View style={styles.container}>
