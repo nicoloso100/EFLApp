@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import ListIconTextBigCard from '../components/listIconTextBigCard';
 import {navBarColor} from './colors';
-import { getResultsFirstActivity, getResultsSecondActivity, getResultsThirdActivity } from '../utils/activitiesResults';
+import { getResultsFirstActivity, getResultsSecondActivity, getResultsThirdActivity, getResultsFourthtActivity } from '../utils/activitiesResults';
 
 /**
 * Menú principal que establece la navegación hacia las actividades
@@ -48,6 +48,8 @@ const Home = props => {
         const Lesson2Incorrect = (await getResultsSecondActivity()).summarized.allIncorrectResults;
         const Lesson3Correct = (await getResultsThirdActivity()).summarized.allCorrectResults;
         const Lesson3Incorrect = (await getResultsThirdActivity()).summarized.allIncorrectResults;
+        const Lesson4Correct = (await getResultsFourthtActivity()).summarized.allCorrectResults;
+        const Lesson4Incorrect = (await getResultsFourthtActivity()).summarized.allIncorrectResults;
 
         setFullData([
           {
@@ -83,8 +85,8 @@ const Home = props => {
             subTittle: 'Leçon 4',
             navigate: 'Activity4',
             direction: 'row-reverse',
-            correct: 10,
-            incorrect: 0
+            correct: Lesson4Correct,
+            incorrect: Lesson4Incorrect
           },
           {
             icon: require('../assets/img/home/engineer.png'),
@@ -128,6 +130,8 @@ const Home = props => {
       const Lesson2Incorrect = (await getResultsSecondActivity()).summarized.allIncorrectResults;
       const Lesson3Correct = (await getResultsThirdActivity()).summarized.allCorrectResults;
       const Lesson3Incorrect = (await getResultsThirdActivity()).summarized.allIncorrectResults;
+      const Lesson4Correct = (await getResultsFourthtActivity()).summarized.allCorrectResults;
+      const Lesson4Incorrect = (await getResultsFourthtActivity()).summarized.allIncorrectResults;
 
       setFullData([
         {
@@ -163,8 +167,8 @@ const Home = props => {
           subTittle: 'Leçon 4',
           navigate: 'Activity4',
           direction: 'row-reverse',
-          correct: 10,
-          incorrect: 0
+          correct: Lesson4Correct,
+          incorrect: Lesson4Incorrect
         },
         {
           icon: require('../assets/img/home/engineer.png'),
