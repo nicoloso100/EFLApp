@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Image} from 'react-native-elements';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Notification from '../../components/notification';
 import ListIconCard from '../../components/ListIconCard';
 import {step1List} from './resources';
 import {bodyColor2} from '../colors';
+import { getResultsFirstActivity } from '../../utils/activitiesResults';
 
 const randomArray = () => {
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
@@ -112,6 +114,8 @@ const Step2 = () => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
   const {optionSet, correct} = options;
 
