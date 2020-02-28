@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import ListIconTextBigCard from '../components/listIconTextBigCard';
 import {navBarColor} from './colors';
-import { getResultsFirstActivity, getResultsSecondActivity, getResultsThirdActivity, getResultsFourthtActivity, getResultsFifithtActivity } from '../utils/activitiesResults';
+import { getResultsFirstActivity, getResultsSecondActivity, getResultsThirdActivity, getResultsFourthtActivity, getResultsFifithtActivity, getResultsSeventhActivity } from '../utils/activitiesResults';
 
 /**
 * Menú principal que establece la navegación hacia las actividades
@@ -52,6 +52,8 @@ const Home = props => {
         const Lesson4Incorrect = (await getResultsFourthtActivity()).summarized.allIncorrectResults;
         const Lesson5Correct = (await getResultsFifithtActivity()).summarized.allCorrectResults;
         const Lesson5Incorrect = (await getResultsFifithtActivity()).summarized.allIncorrectResults;
+        const Lesson7Correct = (await getResultsSeventhActivity()).summarized.allCorrectResults;
+        const Lesson7Incorrect =(await getResultsSeventhActivity()).summarized.allIncorrectResults;
 
         setFullData([
           {
@@ -114,8 +116,8 @@ const Home = props => {
             subTittle: 'Leçon 7',
             navigate: 'Activity7',
             direction: 'row',
-            correct: 9,
-            incorrect: 20
+            correct: Lesson7Correct,
+            incorrect: Lesson7Incorrect
           },
         ]);
       }
@@ -136,6 +138,8 @@ const Home = props => {
       const Lesson4Incorrect = (await getResultsFourthtActivity()).summarized.allIncorrectResults;
       const Lesson5Correct = (await getResultsFifithtActivity()).summarized.allCorrectResults;
       const Lesson5Incorrect = (await getResultsFifithtActivity()).summarized.allIncorrectResults;
+      const Lesson7Correct = (await getResultsSeventhActivity()).summarized.allCorrectResults;
+      const Lesson7Incorrect =(await getResultsSeventhActivity()).summarized.allIncorrectResults;
 
       setFullData([
         {
@@ -198,8 +202,8 @@ const Home = props => {
           subTittle: 'Leçon 7',
           navigate: 'Activity7',
           direction: 'row',
-          correct: 9,
-          incorrect: 20
+          correct: Lesson7Correct,
+          incorrect: Lesson7Incorrect
         },
       ]);
     }

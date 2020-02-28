@@ -5,6 +5,7 @@ import {navBarColor} from '../colors';
 import {NavIcon} from '../../components/IconNav';
 import Step2 from './step2';
 import Step3 from './step3';
+import Step4 from './step4';
 
 const Activity7 = createMaterialTopTabNavigator(
   {
@@ -22,6 +23,12 @@ const Activity7 = createMaterialTopTabNavigator(
     },
     Step3: {
       screen: Step3,
+      navigationOptions: {
+        tabBarIcon: () => <NavIcon />,
+      },
+    },
+    Step4: {
+      screen: Step4,
       navigationOptions: {
         tabBarIcon: () => <NavIcon />,
       },

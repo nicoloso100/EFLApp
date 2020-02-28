@@ -136,3 +136,27 @@ export const getResultsFifithtActivity = async () => {
   }
   return result;
 }
+
+export const getResultsSeventhActivity = async () => {
+  const firstActivityCorrect = await AsyncStorage.getItem('SeventhActivityFirstStepCorrect');
+  const firstActivityIncorrect = await AsyncStorage.getItem('SeventhActivityFirstStepIncorrect');
+  const secondActivityCorrect = await AsyncStorage.getItem('SeventhActivitySecondStepCorrect');
+  const secondActivityIncorrect = await AsyncStorage.getItem('SeventhActivitySecondStepIncorrect');
+
+  let allCorrectResults = parseInt(firstActivityCorrect !== null ? firstActivityCorrect : 0) + parseInt(secondActivityCorrect !== null ? secondActivityCorrect : 0);
+  let allIncorrectResults = parseInt(firstActivityIncorrect !== null ? firstActivityIncorrect : 0) + parseInt(secondActivityIncorrect !== null ? secondActivityIncorrect : 0);
+  
+  let result = {
+    detailed: {
+      firstActivityCorrect: firstActivityCorrect !== null ? parseInt(firstActivityCorrect) : 0,
+      firstActivityIncorrect: firstActivityIncorrect !== null ? parseInt(firstActivityIncorrect) : 0,
+      secondActivityCorrect: secondActivityCorrect !== null ? parseInt(secondActivityCorrect) : 0,
+      secondActivityIncorrect: secondActivityIncorrect !== null ? parseInt(secondActivityIncorrect) : 0
+    },
+    summarized:{
+      allCorrectResults, 
+      allIncorrectResults
+    }
+  }
+  return result;
+}

@@ -11,12 +11,14 @@ import {
 } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 import {Overlay, Icon, Button} from 'react-native-elements';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Notification from '../../components/notification';
 import {step3list} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
 import HomeButton from '../../components/HomeButton';
+import { getResultsSeventhActivity } from '../../utils/activitiesResults';
 
 console.disableYellowBox = true;
 
@@ -102,12 +104,14 @@ const Step3 = ({navigation}) => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
   const onLayout = e => {
     setShowModal(false);
   };
 
-  const validateAnswer = () => {
+  const validateAnswer = async () => {
     if (text.toLowerCase() === step.correctText.toLowerCase()) {
       setStep(getRandomItem(step));
       setText('');
@@ -115,17 +119,30 @@ const Step3 = ({navigation}) => {
         showModal: true,
         isCorrect: true,
       });
+      setCorrectValue(correctValue + 1);
+      await AsyncStorage.setItem('SeventhActivitySecondStepCorrect', JSON.stringify(correctValue));
     } else {
       setResult({
         showModal: true,
         isCorrect: false,
       });
+      setIncorrectValue(incorrectValue + 1);
+      await AsyncStorage.setItem('SeventhActivitySecondStepIncorrect', JSON.stringify(incorrectValue));
     }
   };
 
   const splitText = (text, split) => {
     return text.split(split);
   };
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsSeventhActivity()).detailed;
+      setCorrectValue(detailed.firstActivityCorrect + 1)
+      setIncorrectValue(detailed.firstActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
 
   return (
     <View style={styles.container} onLayout={onLayout.bind(this)}>
