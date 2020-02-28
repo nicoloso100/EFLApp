@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   TouchableOpacity,
@@ -9,11 +9,13 @@ import {
   Image,
 } from 'react-native';
 import {Icon, Button} from 'react-native-elements';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Notification from '../../components/notification';
 import {step1List} from './resources';
 import {primaryColor, bodyColor1} from '../colors';
 import HomeButton from '../../components/HomeButton';
+import { getResultsFifithtActivity } from '../../utils/activitiesResults';
 
 const randomArray = () => {
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
@@ -216,8 +218,10 @@ const Step3 = ({navigation}) => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
-  const onButtonClick = () => {
+  const onButtonClick = async () => {
     let isCorrect = false;
     if (checkAnswers()) {
       isCorrect = true;
@@ -232,8 +236,12 @@ const Step3 = ({navigation}) => {
         setSteps(newArray);
         setArray(getSampleArray(newArray[0].text));
       }
+      setCorrectValue(correctValue + 1);
+      await AsyncStorage.setItem('FifithActivitySecondStepCorrect', JSON.stringify(correctValue));
     } else {
       isCorrect = false;
+      setIncorrectValue(incorrectValue + 1);
+      await AsyncStorage.setItem('FifithActivitySecondStepIncorrect', JSON.stringify(incorrectValue));
     }
     setResult({
       showModal: true,
@@ -256,6 +264,15 @@ const Step3 = ({navigation}) => {
     });
     return correct;
   };
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsFifithtActivity()).detailed;
+      setCorrectValue(detailed.firstActivityCorrect + 1)
+      setIncorrectValue(detailed.firstActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
 
   return (
     <View style={styles.container}>

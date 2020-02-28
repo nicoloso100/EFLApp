@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { bodyColor1 } from '../colors';
 import HomeButton from '../../components/HomeButton';
 import ActivityResults from '../../components/ActivityResults';
-import { getResultsFirstActivity } from '../../utils/activitiesResults';
+import { getResultsFifithtActivity } from '../../utils/activitiesResults';
 
 const Step4 = ({ navigation }) => {
   const [refreshing, setRefreshing] = useState(false);
@@ -28,7 +28,7 @@ const Step4 = ({ navigation }) => {
 
     wait(200).then(async () => {
 
-      let detailed = (await getResultsFirstActivity()).detailed;
+      let detailed = (await getResultsFifithtActivity()).detailed;
       const firstActivityCorrect = detailed.firstActivityCorrect;
       const firstActivityIncorrect = detailed.firstActivityIncorrect;
       const secondActivityCorrect = detailed.secondActivityCorrect;
@@ -61,10 +61,10 @@ const Step4 = ({ navigation }) => {
             style: 'cancel',
           },
           {text: `D'accord`, onPress: async () => {
-            await AsyncStorage.removeItem('FirstActivityCorrect');
-            await AsyncStorage.removeItem('FirstActivityIncorrect');
-            await AsyncStorage.removeItem('SecondActivityCorrect');
-            await AsyncStorage.removeItem('SecondActivityIncorrect');
+            await AsyncStorage.removeItem('FifithActivityFirstStepCorrect');
+            await AsyncStorage.removeItem('FifithActivityFirstStepIncorrect');
+            await AsyncStorage.removeItem('FifithActivitySecondStepCorrect');
+            await AsyncStorage.removeItem('FifithActivitySecondStepIncorrect');
           }},
         ],
         {cancelable: false},

@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import ListIconTextBigCard from '../components/listIconTextBigCard';
 import {navBarColor} from './colors';
-import { getResultsFirstActivity, getResultsSecondActivity, getResultsThirdActivity, getResultsFourthtActivity } from '../utils/activitiesResults';
+import { getResultsFirstActivity, getResultsSecondActivity, getResultsThirdActivity, getResultsFourthtActivity, getResultsFifithtActivity } from '../utils/activitiesResults';
 
 /**
 * Menú principal que establece la navegación hacia las actividades
@@ -50,6 +50,8 @@ const Home = props => {
         const Lesson3Incorrect = (await getResultsThirdActivity()).summarized.allIncorrectResults;
         const Lesson4Correct = (await getResultsFourthtActivity()).summarized.allCorrectResults;
         const Lesson4Incorrect = (await getResultsFourthtActivity()).summarized.allIncorrectResults;
+        const Lesson5Correct = (await getResultsFifithtActivity()).summarized.allCorrectResults;
+        const Lesson5Incorrect = (await getResultsFifithtActivity()).summarized.allIncorrectResults;
 
         setFullData([
           {
@@ -94,8 +96,8 @@ const Home = props => {
             subTittle: 'Leçon 5',
             navigate: 'Activity5',
             direction: 'row',
-            correct: 0,
-            incorrect: 12
+            correct: Lesson5Correct,
+            incorrect: Lesson5Incorrect
           },
           {
             icon: require('../assets/img/home/lettering.png'),
@@ -103,8 +105,8 @@ const Home = props => {
             subTittle: 'Leçon 6',
             navigate: 'Activity6',
             direction: 'row-reverse',
-            correct: 1,
-            incorrect: 1
+            correct: 0,
+            incorrect: 0
           },
           {
             icon: require('../assets/img/home/map.png'),
@@ -132,6 +134,8 @@ const Home = props => {
       const Lesson3Incorrect = (await getResultsThirdActivity()).summarized.allIncorrectResults;
       const Lesson4Correct = (await getResultsFourthtActivity()).summarized.allCorrectResults;
       const Lesson4Incorrect = (await getResultsFourthtActivity()).summarized.allIncorrectResults;
+      const Lesson5Correct = (await getResultsFifithtActivity()).summarized.allCorrectResults;
+      const Lesson5Incorrect = (await getResultsFifithtActivity()).summarized.allIncorrectResults;
 
       setFullData([
         {
@@ -176,8 +180,8 @@ const Home = props => {
           subTittle: 'Leçon 5',
           navigate: 'Activity5',
           direction: 'row',
-          correct: 0,
-          incorrect: 12
+          correct: Lesson5Correct,
+          incorrect: Lesson5Incorrect
         },
         {
           icon: require('../assets/img/home/lettering.png'),
@@ -185,8 +189,8 @@ const Home = props => {
           subTittle: 'Leçon 6',
           navigate: 'Activity6',
           direction: 'row-reverse',
-          correct: 1,
-          incorrect: 1
+          correct: 0,
+          incorrect: 0
         },
         {
           icon: require('../assets/img/home/map.png'),

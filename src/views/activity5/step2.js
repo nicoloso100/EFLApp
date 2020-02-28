@@ -7,7 +7,7 @@ import Notification from '../../components/notification';
 import ListIconCard from '../../components/ListIconCard';
 import {step1List} from './resources';
 import {bodyColor2} from '../colors';
-import { getResultsFirstActivity } from '../../utils/activitiesResults';
+import { getResultsFifithtActivity } from '../../utils/activitiesResults';
 
 const randomArray = () => {
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
@@ -123,7 +123,7 @@ const Step2 = () => {
     setResult({...result, showModal: false});
   };
 
-  const select = selection => {
+  const select = async selection => {
     let correctOption = optionSet[correct];
     if (selection.text === correctOption.text) {
       setResult({
@@ -132,14 +132,27 @@ const Step2 = () => {
       });
       selection.audio.stop();
       setoptions(randomArray());
+      setCorrectValue(correctValue + 1);
+      await AsyncStorage.setItem('FifithActivityFirstStepCorrect', JSON.stringify(correctValue));
     } else {
       setResult({
         showModal: true,
         isCorrect: false,
       });
       isCorrect = false;
+      setIncorrectValue(incorrectValue + 1);
+        await AsyncStorage.setItem('FifithActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
     }
   };
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsFifithtActivity()).detailed;
+      setCorrectValue(detailed.firstActivityCorrect + 1)
+      setIncorrectValue(detailed.firstActivityIncorrect + 1)
+    };
+    asyncUseEffect();
+  }, []);
 
   return (
     <View style={styles.container}>

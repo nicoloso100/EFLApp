@@ -114,10 +114,10 @@ export const getResultsFourthtActivity = async () => {
 }
 
 export const getResultsFifithtActivity = async () => {
-  const firstActivityCorrect = await AsyncStorage.getItem('FourthActivityFirstStepCorrect');
-  const firstActivityIncorrect = await AsyncStorage.getItem('FourthActivityFirstStepIncorrect');
-  const secondActivityCorrect = await AsyncStorage.getItem('FourthActivitySecondStepCorrect');
-  const secondActivityIncorrect = await AsyncStorage.getItem('FourthActivitySecondStepIncorrect');
+  const firstActivityCorrect = await AsyncStorage.getItem('FifithActivityFirstStepCorrect');
+  const firstActivityIncorrect = await AsyncStorage.getItem('FifithActivityFirstStepIncorrect');
+  const secondActivityCorrect = await AsyncStorage.getItem('FifithActivitySecondStepCorrect');
+  const secondActivityIncorrect = await AsyncStorage.getItem('FifithActivitySecondStepIncorrect');
 
   let allCorrectResults = parseInt(firstActivityCorrect !== null ? firstActivityCorrect : 0) + parseInt(secondActivityCorrect !== null ? secondActivityCorrect : 0);
   let allIncorrectResults = parseInt(firstActivityIncorrect !== null ? firstActivityIncorrect : 0) + parseInt(secondActivityIncorrect !== null ? secondActivityIncorrect : 0);
