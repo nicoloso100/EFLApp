@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\nicoloso100\\Documents\\work\\Proyectos\\EFLApp\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v18\\values-v18.xml",
+            "outputFile": "/Users/davidlecodes/Develop/Projects/Universidad/EFLApp/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nicoloso100\\.gradle\\caches\\transforms-2\\files-2.1\\e2d0579e50357b9506890fcfe1485dc2\\res\\values-v18\\values-v18.xml",
+                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/352eb027b9e0a038f349e26ed73e3f90/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
