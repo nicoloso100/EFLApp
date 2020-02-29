@@ -225,7 +225,7 @@ const Home = props => {
         />
         <View style={styles.textContent}>
           <Text style={styles.title}>EFLA</Text>
-          <Text style={styles.subTittle}>Français por nous</Text>
+          <Text style={styles.subTittle}>Français pour nous</Text>
         </View>
       </View>
       <View style={styles.body}>
