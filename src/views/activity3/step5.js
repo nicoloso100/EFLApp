@@ -31,12 +31,19 @@ const Step4 = ({ navigation }) => {
       let detailed = (await getResultsThirdActivity()).detailed;
       const firstActivityCorrect = detailed.firstActivityCorrect;
       const firstActivityIncorrect = detailed.firstActivityIncorrect;
+      const secondActivityCorrect = detailed.firstActivityCorrect;
+      const secondActivityIncorrect = detailed.firstActivityIncorrect;
 
       setAllResults([
         {
           id: 1,
           correct: firstActivityCorrect ? firstActivityCorrect : '0',
           incorrect: firstActivityIncorrect ? firstActivityIncorrect : '0'
+        },
+        {
+          id: 2,
+          correct: secondActivityCorrect ? secondActivityCorrect : '0',
+          incorrect: secondActivityIncorrect ? secondActivityIncorrect : '0'
         }
       ]);
       setRefreshing(false);
@@ -56,6 +63,8 @@ const Step4 = ({ navigation }) => {
           {text: `D'accord`, onPress: async () => {
             await AsyncStorage.removeItem('ThirdActivityFirstStepCorrect');
             await AsyncStorage.removeItem('ThirdActivityFirstStepIncorrect');
+            await AsyncStorage.removeItem('ThirdActivitySecondStepCorrect');
+            await AsyncStorage.removeItem('ThirdActivitySecondStepIncorrect');
           }},
         ],
         {cancelable: false},

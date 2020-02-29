@@ -27,38 +27,41 @@ const InputsDialog1 = () => {
   const [correctValue, setCorrectValue] = useState(1);
   const [incorrectValue, setIncorrectValue] = useState(1);
 
-  useEffect(() => {
-    const asyncUseEffect = async () => {
-      let detailed = (await getResultsThirdActivity()).detailed;
-      setCorrectValue(detailed.firstActivityCorrect + 1)
-      setIncorrectValue(detailed.firstActivityIncorrect + 1)
-    };
-    asyncUseEffect();
-  }, []);
-
   const checkAnswers = async () => {
     let correct = true;
     if (answer1.toLowerCase() !== "m'appelle") {
       correct = false;
       setIncorrectValue(incorrectValue + 1);
+      console.log('Incorrect: ', incorrectValue, correct);
       await AsyncStorage.setItem('ThirdActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
-    }
-    if (answer2.toLowerCase() !== 'vous') {
+    } else if (answer2.toLowerCase() !== 'vous') {
       correct = false;
       setIncorrectValue(incorrectValue + 1);
-      //await AsyncStorage.setItem('ThirdActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
+      await AsyncStorage.setItem('ThirdActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
+    } else {
+      setCorrectValue(correctValue + 1);
+      console.log('correct: ', correctValue, correct)
+      await AsyncStorage.setItem('ThirdActivityFirstStepCorrect', JSON.stringify(correctValue));
     }
     setResult({
       showModal: true,
       isCorrect: correct,
     });
-    setCorrectValue(correctValue + 1);
-    await AsyncStorage.setItem('ThirdActivityFirstStepCorrect', JSON.stringify(correctValue));
   };
 
   const setShowModal = () => {
     setResult({...result, showModal: false});
   };
+
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsThirdActivity()).detailed;
+      setCorrectValue(detailed.firstActivityCorrect + 1)
+      setIncorrectValue(detailed.firstActivityIncorrect + 1)
+      console.log(detailed.firstActivityIncorrect)
+    };
+    asyncUseEffect();
+  }, []);
 
   return (
     <React.Fragment>
@@ -97,11 +100,30 @@ const InputsDialog2 = () => {
     showModal: false,
     isCorrect: null,
   });
+  const [correctValue, setCorrectValue] = useState(1);
+  const [incorrectValue, setIncorrectValue] = useState(1);
 
-  const checkAnswers = () => {
+  useEffect(() => {
+    const asyncUseEffect = async () => {
+      let detailed = (await getResultsThirdActivity()).detailed;
+      setCorrectValue(detailed.secondActivityCorrect + 1)
+      setIncorrectValue(detailed.secondActivityIncorrect + 1)
+      console.log(detailed.firstActivityIncorrect)
+    };
+    asyncUseEffect();
+  }, []);
+
+  const checkAnswers = async () => {
     let correct = true;
     if (answer1.toLowerCase() !== 'enchanté') {
       correct = false;
+      setIncorrectValue(incorrectValue + 1);
+      console.log('Incorrect 1: ', incorrectValue, correct);
+      await AsyncStorage.setItem('ThirdActivityFirstStepIncorrect', JSON.stringify(incorrectValue));
+    } else {
+      setCorrectValue(correctValue + 1);
+      console.log('correct 2: ', correctValue, correct)
+      await AsyncStorage.setItem('ThirdActivitySecondStepIncorrect', JSON.stringify(correctValue));
     }
     setResult({
       showModal: true,
