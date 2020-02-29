@@ -4,7 +4,7 @@
             "outputFile": "/Users/davidlecodes/Develop/Projects/Universidad/EFLApp/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-th/values-th.xml",
             "map": [
                 {
-                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/31e57e9e5cb891d780de68ca9a838bf1/res/values-th/values-th.xml",
+                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/c527b78844be871c44103f6f45a963fb/core-1.1.0/res/values-th/values-th.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/352eb027b9e0a038f349e26ed73e3f90/res/values-th/values-th.xml",
+                    "source": "/Users/davidlecodes/.gradle/caches/transforms-2/files-2.1/37ec02f661e3547c5499ecdfd9f3cd1f/appcompat-1.1.0/res/values-th/values-th.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
