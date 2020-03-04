@@ -76,9 +76,7 @@ const stateHandler = async () => {
 			tittle: "Verbes être et avoir",
 			subTittle: "Leçon 6",
 			navigate: "Activity6",
-			direction: "row-reverse",
-			correct: 0,
-			incorrect: 0
+			direction: "row-reverse"
 		},
 		{
 			icon: require("../assets/img/home/map.png"),

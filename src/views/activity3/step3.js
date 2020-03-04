@@ -24,14 +24,15 @@ const InputsDialog1 = () => {
 		if (answer1.toLowerCase() !== "m'appelle") {
 			correct = false;
 			setIncorrectValue(incorrectValue + 1);
-			await AsyncStorage.setItem("ThirdActivityFirstStepIncorrect", JSON.stringify(incorrectValue));
 		} else if (answer2.toLowerCase() !== "vous") {
 			correct = false;
-			setIncorrectValue(incorrectValue + 1);
-			await AsyncStorage.setItem("ThirdActivityFirstStepIncorrect", JSON.stringify(incorrectValue));
-		} else {
+		}
+		if (correct) {
 			setCorrectValue(correctValue + 1);
 			await AsyncStorage.setItem("ThirdActivityFirstStepCorrect", JSON.stringify(correctValue));
+		} else {
+			setIncorrectValue(incorrectValue + 1);
+			await AsyncStorage.setItem("ThirdActivityFirstStepIncorrect", JSON.stringify(incorrectValue));
 		}
 		setResult({
 			showModal: true,
@@ -92,10 +93,10 @@ const InputsDialog2 = () => {
 		if (answer1.toLowerCase() !== "enchanté") {
 			correct = false;
 			setIncorrectValue(incorrectValue + 1);
-			await AsyncStorage.setItem("ThirdActivityFirstStepIncorrect", JSON.stringify(incorrectValue));
+			await AsyncStorage.setItem("ThirdActivitySecondStepIncorrect", JSON.stringify(incorrectValue));
 		} else {
 			setCorrectValue(correctValue + 1);
-			await AsyncStorage.setItem("ThirdActivitySecondStepIncorrect", JSON.stringify(correctValue));
+			await AsyncStorage.setItem("ThirdActivitySecondStepCorrect", JSON.stringify(correctValue));
 		}
 		setResult({
 			showModal: true,
@@ -118,31 +119,6 @@ const InputsDialog2 = () => {
 		</React.Fragment>
 	);
 };
-
-/**
- * Paso 3 de la primera actividad: Escribir el día
- *
- * Recursos: se utiliza la lista scene2 del archivo de recursos
- * Contiene como atributos un ávatar, un audio del dialogo y su respectivo texto
- * ```javascript
- *  scene2 = {
- *  dialog1: {
- *    avatar: require('../../assets/img/activity3/boy2.png'),
- *    sound: new Sound('activity3_2_1.ogg', Sound.MAIN_BUNDLE),
- *    text: `Comment vous vous appelez?`,
- *  },
- * ```
- *
- * Los componentes
- * ```javascript
- *<InputsDialog1 />
- * ```
- * y
- * ```javascript
- *<InputsDialog2 />
- * ```
- Se encargan de mostrar y validar los campos de texto, junto a su botón de verificar
- */
 
 const Step3 = ({ navigation }) => {
 	return (

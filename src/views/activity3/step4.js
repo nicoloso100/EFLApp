@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { StyleSheet, View, Alert, ScrollView, RefreshControl, Text } from "react-native";
 import { Icon, Button } from "react-native-elements";
 import AsyncStorage from "@react-native-community/async-storage";
@@ -8,41 +8,33 @@ import HomeButton from "../../components/HomeButton";
 import ActivityResults from "../../components/ActivityResults";
 import { getResultsThirdActivity } from "../../utils/activitiesResults";
 
+const getResults = async () => {
+	let summarized = (await getResultsThirdActivity()).summarized;
+
+	return [
+		{
+			id: 1,
+			correct: summarized.allCorrectResults,
+			incorrect: summarized.allIncorrectResults
+		}
+	];
+};
+
 const Step4 = ({ navigation }) => {
 	const [refreshing, setRefreshing] = useState(false);
 	const [allResults, setAllResults] = useState([]);
 
-	const wait = timeout => {
-		return new Promise(resolve => {
-			setTimeout(resolve, timeout);
-		});
-	};
-
 	const onRefresh = useCallback(() => {
 		setRefreshing(true);
-
-		wait(200).then(async () => {
-			let detailed = (await getResultsThirdActivity()).detailed;
-			const firstActivityCorrect = detailed.firstActivityCorrect;
-			const firstActivityIncorrect = detailed.firstActivityIncorrect;
-			const secondActivityCorrect = detailed.firstActivityCorrect;
-			const secondActivityIncorrect = detailed.firstActivityIncorrect;
-
-			setAllResults([
-				{
-					id: 1,
-					correct: firstActivityCorrect ? firstActivityCorrect : "0",
-					incorrect: firstActivityIncorrect ? firstActivityIncorrect : "0"
-				},
-				{
-					id: 2,
-					correct: secondActivityCorrect ? secondActivityCorrect : "0",
-					incorrect: secondActivityIncorrect ? secondActivityIncorrect : "0"
-				}
-			]);
+		getResults().then(data => {
+			setAllResults(data);
 			setRefreshing(false);
 		});
-	}, [refreshing]);
+	}, []);
+
+	useEffect(() => {
+		onRefresh();
+	}, [onRefresh]);
 
 	const onButtonClick = async () => {
 		try {
@@ -61,6 +53,7 @@ const Step4 = ({ navigation }) => {
 							await AsyncStorage.removeItem("ThirdActivityFirstStepIncorrect");
 							await AsyncStorage.removeItem("ThirdActivitySecondStepCorrect");
 							await AsyncStorage.removeItem("ThirdActivitySecondStepIncorrect");
+							onRefresh();
 						}
 					}
 				],
