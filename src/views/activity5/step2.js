@@ -8,24 +8,19 @@ import ListIconCard from "../../components/ListIconCard";
 import { step1List } from "./resources";
 import { bodyColor2, primaryColor } from "../colors";
 import { getResultsFifithtActivity } from "../../utils/activitiesResults";
+import { getRandomPos } from "../../utils/random";
 
-const randomArray = () => {
-	let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-	let i = array.length;
-	let j = 0;
-	let temp;
-
-	while (i--) {
-		j = Math.floor(Math.random() * (i + 1));
-		temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-
-	return {
+const randomArray = prevCorrect => {
+	let array = getRandomPos(step1List.length);
+	let response = {
 		correct: Math.floor(Math.random() * 4),
 		optionSet: [step1List[array[0]], step1List[array[2]], step1List[array[4]], step1List[array[6]]]
 	};
+	if (!response.optionSet[response.correct] || (prevCorrect && prevCorrect.text === response.optionSet[response.correct].text)) {
+		return randomArray(prevCorrect);
+	} else {
+		return response;
+	}
 };
 
 const Step2 = () => {
@@ -51,7 +46,7 @@ const Step2 = () => {
 				isCorrect: true
 			});
 			selection.audio.stop();
-			setoptions(randomArray());
+			setoptions(randomArray(correctOption));
 			setCorrectValue(correctValue + 1);
 			await AsyncStorage.setItem("FifithActivityFirstStepCorrect", JSON.stringify(correctValue));
 		} else {

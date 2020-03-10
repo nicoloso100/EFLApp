@@ -12,8 +12,8 @@ const Step2 = () => {
 	const [correctValue, setCorrectValue] = useState(1);
 	const [incorrectValue, setIncorrectValue] = useState(1);
 
-	const onCorrectClick = async () => {
-		setStep(getRandomItem());
+	const onCorrectClick = async step => {
+		setStep(getRandomItem(step));
 		setResult({
 			showModal: true,
 			isCorrect: true
@@ -31,22 +31,26 @@ const Step2 = () => {
 		await AsyncStorage.setItem("FourthActivityFirstStepIncorrect", JSON.stringify(incorrectValue));
 	};
 
-	const getRandomItem = () => {
+	const getRandomItem = step => {
 		let selectedItem = Step2List[Math.floor(Math.random() * 10)];
-		let correctPos = Math.random() < 0.5 ? 0 : 1;
-		let correctCase = {
-			image: selectedItem.correctImage,
-			action: onCorrectClick
-		};
-		let incorrectCase = {
-			image: selectedItem.incorrectImage,
-			action: onInCorrectClick
-		};
-		selectedItem = {
-			...selectedItem,
-			options: [correctPos === 0 ? correctCase : incorrectCase, correctPos === 1 ? correctCase : incorrectCase]
-		};
-		return selectedItem;
+		if (!selectedItem || (step && step.text === selectedItem.text)) {
+			getRandomItem(step);
+		} else {
+			let correctPos = Math.random() < 0.5 ? 0 : 1;
+			let correctCase = {
+				image: selectedItem.correctImage,
+				action: onCorrectClick
+			};
+			let incorrectCase = {
+				image: selectedItem.incorrectImage,
+				action: onInCorrectClick
+			};
+			selectedItem = {
+				...selectedItem,
+				options: [correctPos === 0 ? correctCase : incorrectCase, correctPos === 1 ? correctCase : incorrectCase]
+			};
+			return selectedItem;
+		}
 	};
 
 	const [step, setStep] = useState(getRandomItem());
@@ -77,12 +81,12 @@ const Step2 = () => {
 				</TouchableOpacity>
 			</View>
 			<ScrollView>
-				<TouchableOpacity onPress={() => step.options[0].action()}>
+				<TouchableOpacity onPress={() => step.options[0].action(step)}>
 					<View style={styles.imageContainer}>
 						<Image style={styles.image} source={step.options[0].image} />
 					</View>
 				</TouchableOpacity>
-				<TouchableOpacity onPress={() => step.options[1].action()}>
+				<TouchableOpacity onPress={() => step.options[1].action(step)}>
 					<View style={styles.imageContainer}>
 						<Image style={styles.image} source={step.options[1].image} />
 					</View>

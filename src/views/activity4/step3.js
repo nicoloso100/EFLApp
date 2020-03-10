@@ -16,9 +16,13 @@ const TreeImage = ({ setStyle }) => {
 	return <Image enableHorizontalBounce={true} style={setStyle} source={require("../../assets/img/activity4/arbolGenealogico.jpeg")} />;
 };
 
-const getRandomItem = () => {
+const getRandomItem = prevItem => {
 	let selectedItem = step3list[Math.floor(Math.random() * 7)];
-	return selectedItem;
+	if (!selectedItem || (prevItem && prevItem.text === selectedItem.text)) {
+		getRandomItem(prevItem);
+	} else {
+		return selectedItem;
+	}
 };
 
 const Step3 = ({ navigation }) => {
@@ -38,7 +42,7 @@ const Step3 = ({ navigation }) => {
 
 	const validateAnswer = async () => {
 		if (text.toLowerCase() === step.correctText.toLowerCase()) {
-			setStep(getRandomItem());
+			setStep(getRandomItem(step));
 			setText("");
 			setResult({
 				showModal: true,

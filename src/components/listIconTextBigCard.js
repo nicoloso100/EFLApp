@@ -5,7 +5,6 @@ import Icon from "react-native-vector-icons/AntDesign";
 
 const ListIconTextBigCard = ({ item, navigate, navigateRoute }) => {
 	const getPercentage = useMemo(() => {
-		console.log(item);
 		if (item.correct !== undefined && item.incorrect !== undefined) {
 			let generalResult = item.correct + item.incorrect;
 			if (generalResult !== 0) {

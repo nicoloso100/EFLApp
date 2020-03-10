@@ -34,6 +34,8 @@ target 'EFLApp' do
 
   pod 'RNSoundRecorder', :path => '../node_modules/react-native-sound-recorder'
 
+  pod 'RNSound', :path => '../node_modules/react-native-sound'
+
   target 'EFLAppTests' do
     inherit! :search_paths
     # Pods for testing

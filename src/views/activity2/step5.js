@@ -9,24 +9,20 @@ import ListIconCard from "../../components/ListIconCard";
 import { steps4 } from "./resources";
 import { bodyColor1, primaryColor } from "../colors";
 import { getResultsSecondActivity } from "../../utils/activitiesResults";
+import { getRandomPos } from "../../utils/random";
 
-const randomArray = () => {
-	let array = [0, 1, 2];
-	let i = array.length;
-	let j = 0;
-	let temp;
-
-	while (i--) {
-		j = Math.floor(Math.random() * (i + 1));
-		temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-
-	return {
+const randomArray = prevCorrect => {
+	let array = getRandomPos(steps4.length);
+	let response = {
 		correct: Math.floor(Math.random() * 3),
 		optionSet: [steps4[array[0]], steps4[array[1]], steps4[array[2]]]
 	};
+
+	if (!response.optionSet[response.correct] || (prevCorrect && prevCorrect.title === response.optionSet[response.correct].title)) {
+		return randomArray(prevCorrect);
+	} else {
+		return response;
+	}
 };
 
 const Step5 = () => {
@@ -69,7 +65,7 @@ const Step5 = () => {
 			showModal: true,
 			isCorrect: isCorrect
 		});
-		setoptions(randomArray());
+		setoptions(randomArray(correctOption));
 	};
 
 	return (

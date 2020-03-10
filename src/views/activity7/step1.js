@@ -8,8 +8,6 @@ import Notification from "../../components/notification";
 import { step1List } from "./resources";
 import { primaryColor, bodyColor1 } from "../colors";
 
-console.disableYellowBox = true;
-
 const TreeImage = ({ setStyle }) => {
 	return <Image enableHorizontalBounce={true} style={setStyle} source={require("../../assets/img/activity7/mapCity.png")} />;
 };
@@ -70,6 +68,7 @@ const Step1 = () => {
 					<View style={styles.textContent}>
 						<Text style={styles.title}>{step.text}</Text>
 					</View>
+					{console.log(step)}
 					<TouchableOpacity onPress={() => step.audio.play()}>
 						<Icon raised name="play" type="font-awesome" color={primaryColor} />
 					</TouchableOpacity>

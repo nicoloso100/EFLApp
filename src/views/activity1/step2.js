@@ -9,28 +9,23 @@ import Notification from "../../components/notification";
 import { step2List } from "./resources";
 import { bodyColor2, primaryColor } from "../colors";
 import { getResultsFirstActivity } from "../../utils/activitiesResults";
+import { getRandomPos } from "../../utils/random";
 
-const randomArray = () => {
-	let array = [0, 1, 2, 3, 4, 5, 6];
-	let i = array.length;
-	let j = 0;
-	let temp;
-
-	while (i--) {
-		j = Math.floor(Math.random() * (i + 1));
-		temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-
-	return {
+const randomArray = prevCorrect => {
+	let array = getRandomPos(step2List.length);
+	let response = {
 		correct: Math.floor(Math.random() * 4),
 		optionSet: [step2List[array[0]], step2List[array[2]], step2List[array[4]], step2List[array[6]]]
 	};
+	if (!step2List[response.correct] || (prevCorrect && prevCorrect.id === step2List[response.correct].id)) {
+		return randomArray(prevCorrect);
+	} else {
+		return response;
+	}
 };
 
 const Step2 = ({ navigation }) => {
-	const [options, setoptions] = useState(randomArray());
+	const [options, setoptions] = useState(() => randomArray());
 	const [result, setResult] = useState({
 		showModal: false,
 		isCorrect: null
@@ -54,6 +49,7 @@ const Step2 = ({ navigation }) => {
 	};
 
 	const select = async selection => {
+		console.log("select " + selection);
 		try {
 			let isCorrect = false;
 			let correctOption = optionSet[correct];
@@ -71,7 +67,7 @@ const Step2 = ({ navigation }) => {
 				isCorrect: isCorrect
 			});
 
-			setoptions(randomArray());
+			setoptions(randomArray(correctOption));
 		} catch (e) {
 			console.error(e);
 		}

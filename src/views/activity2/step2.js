@@ -9,28 +9,23 @@ import ListIconCard from "../../components/ListIconCard";
 import { steps } from "./resources";
 import { bodyColor2, primaryColor } from "../colors";
 import { getResultsSecondActivity } from "../../utils/activitiesResults";
+import { getRandomPos } from "../../utils/random";
 
-const randomArray = () => {
-	let array = [0, 1, 2];
-	let i = array.length;
-	let j = 0;
-	let temp;
-
-	while (i--) {
-		j = Math.floor(Math.random() * (i + 1));
-		temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-
-	return {
+const randomArray = prevCorrect => {
+	let array = getRandomPos(steps.length);
+	let response = {
 		correct: Math.floor(Math.random() * 3),
 		optionSet: [steps[array[0]], steps[array[1]], steps[array[2]]]
 	};
+	if (!response.optionSet[response.correct] || (prevCorrect && prevCorrect.title === response.optionSet[response.correct].title)) {
+		return randomArray(prevCorrect);
+	} else {
+		return response;
+	}
 };
 
 const Step2 = () => {
-	const [options, setoptions] = useState(randomArray());
+	const [options, setoptions] = useState(() => randomArray());
 	const [result, setResult] = useState({
 		showModal: false,
 		isCorrect: null
@@ -60,7 +55,7 @@ const Step2 = () => {
 				showModal: true,
 				isCorrect: true
 			});
-			setoptions(randomArray());
+			setoptions(randomArray(correctOption));
 			setCorrectValue(correctValue + 1);
 			await AsyncStorage.setItem("SecondActivityFirstStepCorrect", JSON.stringify(correctValue));
 		} else {

@@ -9,13 +9,17 @@ import { primaryColor, bodyColor1 } from "../colors";
 import HomeButton from "../../components/HomeButton";
 import { getResultsFirstActivity } from "../../utils/activitiesResults";
 
-const getRandomItem = () => {
+const getRandomItem = prevCorrect => {
 	let selectedItem = step3Items[Math.floor(Math.random() * 7)];
-	return selectedItem;
+	if (!selectedItem || (prevCorrect && selectedItem.text === prevCorrect.text)) {
+		return getRandomItem(prevCorrect);
+	} else {
+		return selectedItem;
+	}
 };
 
 const Step3 = ({ navigation }) => {
-	const [item, setItem] = useState(getRandomItem());
+	const [item, setItem] = useState(() => getRandomItem());
 	const [text, setText] = useState("");
 	const [resultHistory, setresultHistory] = useState([]);
 	const [result, setResult] = useState({
@@ -46,7 +50,7 @@ const Step3 = ({ navigation }) => {
 			});
 			setCorrectValue(correctValue + 1);
 			await AsyncStorage.setItem("SecondActivityCorrect", JSON.stringify(correctValue));
-			setItem(getRandomItem());
+			setItem(getRandomItem(item));
 			setresultHistory(
 				[
 					{

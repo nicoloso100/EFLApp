@@ -8,20 +8,10 @@ import { steps6 } from "./resources";
 import { primaryColor, bodyColor2 } from "../colors";
 import HomeButton from "../../components/HomeButton";
 import { getResultsSecondActivity } from "../../utils/activitiesResults";
+import { getRandomPos } from "../../utils/random";
 
 const randomArray = () => {
-	let array = [0, 1, 2, 3];
-	let i = array.length;
-	let j = 0;
-	let temp;
-
-	while (i--) {
-		j = Math.floor(Math.random() * (i + 1));
-		temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-
+	let array = getRandomPos(steps6.length);
 	return [steps6[array[0]], steps6[array[1]], steps6[array[2]], steps6[array[3]]];
 };
 
