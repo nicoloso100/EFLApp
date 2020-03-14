@@ -48,10 +48,10 @@ item es un objeto con las siguientes propiedades requeridas:
 
 ```javascript
 item = {
-  tittle: 'título de la tarjeta',
-  subTittle: 'subtítulo de la tarjeta',
-  direction: 'dirección de flexbox (row, row-reverse)',
-  icon: 'ícono de la tarjeta',
+  tittle: "título de la tarjeta",
+  subTittle: "subtítulo de la tarjeta",
+  direction: "dirección de flexbox (row, row-reverse)",
+  icon: "ícono de la tarjeta"
 };
 ```
 
@@ -73,10 +73,10 @@ item es un objeto con las siguientes propiedades requeridas:
 
 ```javascript
 item = {
-  audio: 'Audio que se reproduce al hacer click en la tarjeta',
-  avatar: 'ícono de la tarjeta',
-  text: 'Texto principal',
-  subText: 'Texto secundario',
+  audio: "Audio que se reproduce al hacer click en la tarjeta",
+  avatar: "ícono de la tarjeta",
+  text: "Texto principal",
+  subText: "Texto secundario"
 };
 ```
 
@@ -113,10 +113,10 @@ item es un objeto con las siguientes propiedades requeridas:
 
 ```javascript
 item = {
-  audio: 'Audio que se reproduce al hacer click en la tarjeta',
-  avatar: 'ícono de la tarjeta',
-  text: 'Texto principal',
-  subText: 'Texto secundario',
+  audio: "Audio que se reproduce al hacer click en la tarjeta",
+  avatar: "ícono de la tarjeta",
+  text: "Texto principal",
+  subText: "Texto secundario"
 };
 ```
 
@@ -137,7 +137,7 @@ const [playing, setPlaying] = useState(false);
 //Deshabilita el botón de la opción de escuchar todos
 const [optionPlaying, setoptionPlaying] = useState(false);
 //Muestra los días de la opción de escuchar todos
-const [dayLabel, setDayLabel] = useState('');
+const [dayLabel, setDayLabel] = useState("");
 ```
 
 Recursos: importa dos listas del archivo de recursos
@@ -184,7 +184,7 @@ const onSampleClick = () => {
     setDayIndex(randomIndex, 0);
     setTimeout(() => {
       setPlaying(null);
-      setDayLabel('');
+      setDayLabel("");
     }, selectedSample.getDuration() * 1000);
   }
 };
@@ -227,7 +227,7 @@ const [options, setoptions] = useState(randomArray());
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -265,8 +265,8 @@ const randomArray = () => {
       step2List[array[0]],
       step2List[array[2]],
       step2List[array[4]],
-      step2List[array[6]],
-    ],
+      step2List[array[6]]
+    ]
   };
 };
 ```
@@ -286,7 +286,7 @@ const select = selection => {
   }
   setResult({
     showModal: true,
-    isCorrect: isCorrect,
+    isCorrect: isCorrect
   });
   setoptions(randomArray());
 };
@@ -309,13 +309,13 @@ Variables:
 //Elemento de la actividad
 const [item, setItem] = useState(getRandomItem());
 //Texto de la parte superior
-const [text, setText] = useState('');
+const [text, setText] = useState("");
 //Lista de respuestas correctas
 const [resultHistory, setresultHistory] = useState([]);
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -349,22 +349,22 @@ const onButtonClick = () => {
   if (item.result === text.toLowerCase()) {
     setResult({
       showModal: true,
-      isCorrect: true,
+      isCorrect: true
     });
     setItem(getRandomItem());
     setresultHistory(
       [
         {
           key: resultHistory.length.toString(),
-          text: `${text} - ${item.text}`,
-        },
-      ].concat(resultHistory),
+          text: `${text} - ${item.text}`
+        }
+      ].concat(resultHistory)
     );
-    setText('');
+    setText("");
   } else {
     setResult({
       showModal: true,
-      isCorrect: false,
+      isCorrect: false
     });
   }
 };
@@ -437,7 +437,7 @@ const [options, setoptions] = useState(randomArray());
 //Gestiona el resultado para la notificación
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -471,7 +471,7 @@ const randomArray = () => {
 
   return {
     correct: Math.floor(Math.random() * 3),
-    optionSet: [steps[array[0]], steps[array[1]], steps[array[2]]],
+    optionSet: [steps[array[0]], steps[array[1]], steps[array[2]]]
   };
 };
 ```
@@ -486,13 +486,13 @@ const select = selection => {
   if (selection.title === correctOption.title) {
     setResult({
       showModal: true,
-      isCorrect: true,
+      isCorrect: true
     });
     setoptions(randomArray());
   } else {
     setResult({
       showModal: true,
-      isCorrect: false,
+      isCorrect: false
     });
   }
 };
@@ -592,7 +592,7 @@ const [options, setoptions] = useState(randomArray());
 //Gestiona el resultado de la selección del usuario
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -626,7 +626,7 @@ const randomArray = () => {
 
   return {
     correct: Math.floor(Math.random() * 3),
-    optionSet: [steps4[array[0]], steps4[array[1]], steps4[array[2]]],
+    optionSet: [steps4[array[0]], steps4[array[1]], steps4[array[2]]]
   };
 };
 ```
@@ -646,7 +646,7 @@ const select = selection => {
   }
   setResult({
     showModal: true,
-    isCorrect: isCorrect,
+    isCorrect: isCorrect
   });
   setoptions(randomArray());
 };
@@ -675,7 +675,7 @@ const [array, setArray] = useState(getSampleArray(steps[step].text));
 //Gestiona el resultado de la selección del usuario
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -711,7 +711,7 @@ const randomArray = () => {
     steps6[array[0]],
     steps6[array[1]],
     steps6[array[2]],
-    steps6[array[3]],
+    steps6[array[3]]
   ];
 };
 ```
@@ -721,10 +721,10 @@ Selecciona una lista de opciones rándom
 El componente RandomInput:
 
 ```javascript
-const RandomInput = ({index, array, setArray}) => {
+const RandomInput = ({ index, array, setArray }) => {
   const onChange = text => {
     let answer = [...array];
-    answer[index] = {...answer[index], answer: text};
+    answer[index] = { ...answer[index], answer: text };
     setArray(answer);
   };
 
@@ -751,9 +751,9 @@ const getSampleArray = text => {
   let answers = [];
   for (let i = 0; i < 5; i++) {
     let pos = Math.floor(Math.random() * text.length);
-    if (!array.includes(pos) && text[pos] !== ' ') {
+    if (!array.includes(pos) && text[pos] !== " ") {
       array.push(pos);
-      answers.push({pos: pos, correctAnswer: text[pos], answer: ''});
+      answers.push({ pos: pos, correctAnswer: text[pos], answer: "" });
     }
   }
   return answers;
@@ -769,7 +769,7 @@ const onButtonClick = () => {
   let isCorrect = false;
   if (checkAnswers()) {
     isCorrect = true;
-    messageText = 'bravo !';
+    messageText = "bravo !";
     let newStep = step + 1;
     if (newStep <= 3) {
       setStep(newStep);
@@ -785,7 +785,7 @@ const onButtonClick = () => {
   }
   setResult({
     showModal: true,
-    isCorrect: isCorrect,
+    isCorrect: isCorrect
   });
 };
 ```
@@ -910,7 +910,7 @@ const [playing, setPlaying] = useState(false);
 //Pantalla donde se muestran los integreantes de la familia de forma aleatoria
 const [optionPlaying, setoptionPlaying] = useState(false);
 //Label de la opción optionPlaying
-const [familyLabel, setFamilyLabel] = useState('');
+const [familyLabel, setFamilyLabel] = useState("");
 ```
 
 Recursos: importa dos listas del archivo de recursos
@@ -952,7 +952,7 @@ const onSampleClick = () => {
     setFamilyIndex(randomIndex, 0);
     setTimeout(() => {
       setPlaying(null);
-      setFamilyLabel('');
+      setFamilyLabel("");
     }, selectedSample.getDuration() * 1000);
   }
 };
@@ -993,7 +993,7 @@ const [step, setStep] = useState(getRandomItem());
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -1032,8 +1032,8 @@ const randomArray = () => {
       step2List[array[0]],
       step2List[array[2]],
       step2List[array[4]],
-      step2List[array[6]],
-    ],
+      step2List[array[6]]
+    ]
   };
 };
 ```
@@ -1048,18 +1048,18 @@ const getRandomItem = () => {
   let correctPos = Math.random() < 0.5 ? 0 : 1;
   let correctCase = {
     image: selectedItem.correctImage,
-    action: onCorrectClick,
+    action: onCorrectClick
   };
   let incorrectCase = {
     image: selectedItem.incorrectImage,
-    action: onInCorrectClick,
+    action: onInCorrectClick
   };
   selectedItem = {
     ...selectedItem,
     options: [
       correctPos === 0 ? correctCase : incorrectCase,
-      correctPos === 1 ? correctCase : incorrectCase,
-    ],
+      correctPos === 1 ? correctCase : incorrectCase
+    ]
   };
   return selectedItem;
 };
@@ -1084,11 +1084,11 @@ const [showModal, setShowModal] = useState(false);
 //Obtiene in item random de la lista
 const [step, setStep] = useState(getRandomItem());
 //Almacena el texto del ejercicio
-const [text, setText] = useState('');
+const [text, setText] = useState("");
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -1111,15 +1111,15 @@ La función validateAnswer:
 const validateAnswer = () => {
   if (text.toLowerCase() === step.correctText.toLowerCase()) {
     setStep(getRandomItem());
-    setText('');
+    setText("");
     setResult({
       showModal: true,
-      isCorrect: true,
+      isCorrect: true
     });
   } else {
     setResult({
       showModal: true,
-      isCorrect: false,
+      isCorrect: false
     });
   }
 };
@@ -1174,7 +1174,7 @@ const [options, setoptions] = useState(randomArray());
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -1212,8 +1212,8 @@ const randomArray = () => {
       step1List[array[0]],
       step1List[array[2]],
       step1List[array[4]],
-      step1List[array[6]],
-    ],
+      step1List[array[6]]
+    ]
   };
 };
 ```
@@ -1228,14 +1228,14 @@ const select = selection => {
   if (selection.text === correctOption.text) {
     setResult({
       showModal: true,
-      isCorrect: true,
+      isCorrect: true
     });
     selection.audio.stop();
     setoptions(randomArray());
   } else {
     setResult({
       showModal: true,
-      isCorrect: false,
+      isCorrect: false
     });
     isCorrect = false;
   }
@@ -1265,7 +1265,7 @@ const [array, setArray] = useState(getSampleArray(steps[step].text));
 //Gestiona el resultado de la selección del usuario
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -1301,7 +1301,7 @@ const randomArray = () => {
     steps6[array[0]],
     steps6[array[1]],
     steps6[array[2]],
-    steps6[array[3]],
+    steps6[array[3]]
   ];
 };
 ```
@@ -1311,10 +1311,10 @@ Selecciona una lista de opciones rándom
 El componente RandomInput:
 
 ```javascript
-const RandomInput = ({index, array, setArray}) => {
+const RandomInput = ({ index, array, setArray }) => {
   const onChange = text => {
     let answer = [...array];
-    answer[index] = {...answer[index], answer: text};
+    answer[index] = { ...answer[index], answer: text };
     setArray(answer);
   };
 
@@ -1341,9 +1341,9 @@ const getSampleArray = text => {
   let answers = [];
   for (let i = 0; i < 5; i++) {
     let pos = Math.floor(Math.random() * text.length);
-    if (!array.includes(pos) && text[pos] !== ' ') {
+    if (!array.includes(pos) && text[pos] !== " ") {
       array.push(pos);
-      answers.push({pos: pos, correctAnswer: text[pos], answer: ''});
+      answers.push({ pos: pos, correctAnswer: text[pos], answer: "" });
     }
   }
   return answers;
@@ -1359,7 +1359,7 @@ const onButtonClick = () => {
   let isCorrect = false;
   if (checkAnswers()) {
     isCorrect = true;
-    messageText = 'bravo !';
+    messageText = "bravo !";
     let newStep = step + 1;
     if (newStep <= 3) {
       setStep(newStep);
@@ -1375,7 +1375,7 @@ const onButtonClick = () => {
   }
   setResult({
     showModal: true,
-    isCorrect: isCorrect,
+    isCorrect: isCorrect
   });
 };
 ```
@@ -1440,7 +1440,7 @@ const [step, setStep] = useState(getRandomItem());
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -1472,11 +1472,11 @@ const [showModal, setShowModal] = useState(false);
 //Obtiene in item random de la lista
 const [step, setStep] = useState(getRandomItem());
 //Almacena el texto del ejercicio
-const [text, setText] = useState('');
+const [text, setText] = useState("");
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -1494,15 +1494,15 @@ La función validateAnswer:
 const validateAnswer = () => {
   if (text.toLowerCase() === step.correctText.toLowerCase()) {
     setStep(getRandomItem());
-    setText('');
+    setText("");
     setResult({
       showModal: true,
-      isCorrect: true,
+      isCorrect: true
     });
   } else {
     setResult({
       showModal: true,
-      isCorrect: false,
+      isCorrect: false
     });
   }
 };
@@ -1535,11 +1535,11 @@ const [showModal, setShowModal] = useState(false);
 //Obtiene in item random de la lista
 const [step, setStep] = useState(getRandomItem());
 //Almacena el texto del ejercicio
-const [text, setText] = useState('');
+const [text, setText] = useState("");
 //Gestiona el resultado de la respuesta
 const [result, setResult] = useState({
   showModal: false,
-  isCorrect: null,
+  isCorrect: null
 });
 ```
 
@@ -1557,15 +1557,15 @@ La función validateAnswer:
 const validateAnswer = () => {
   if (text.toLowerCase() === step.correctText.toLowerCase()) {
     setStep(getRandomItem());
-    setText('');
+    setText("");
     setResult({
       showModal: true,
-      isCorrect: true,
+      isCorrect: true
     });
   } else {
     setResult({
       showModal: true,
-      isCorrect: false,
+      isCorrect: false
     });
   }
 };
@@ -1608,6 +1608,64 @@ Utiliza el componente
 ```
 
 Para las tarjetas de la lista
+
+---
+
+**src\utils\activitiesResults.js**
+
+### 1. Results
+
+Las actividades que tienen ejercicios, cuentan con una última página para ver los resultados(correctos e incorrectos) de cada ejercicio.
+
+La lectura y almacenamiento de los resultados se hace mediante AsyncStorage con el fin de no borrar los resultados al cerrar o reiniciar la aplicación, sino tener un alamcenamiento permanente mientras la aplicación se encuentre instalada.
+
+El método que se utiliza para leer el AsyncStorage es el siguiente:
+
+```javascript
+export const getResultsFirstActivity = async () => {
+  const firstActivityCorrect = await AsyncStorage.getItem(
+    "FirstActivityCorrect"
+  );
+  const firstActivityIncorrect = await AsyncStorage.getItem(
+    "FirstActivityIncorrect"
+  );
+  const secondActivityCorrect = await AsyncStorage.getItem(
+    "SecondActivityCorrect"
+  );
+  const secondActivityIncorrect = await AsyncStorage.getItem(
+    "SecondActivityIncorrect"
+  );
+
+  let allCorrectResults =
+    parseInt(firstActivityCorrect !== null ? firstActivityCorrect : 0) +
+    parseInt(secondActivityCorrect !== null ? secondActivityCorrect : 0);
+  let allIncorrectResults =
+    parseInt(firstActivityIncorrect !== null ? firstActivityIncorrect : 0) +
+    parseInt(secondActivityIncorrect !== null ? secondActivityIncorrect : 0);
+
+  let result = {
+    detailed: {
+      firstActivityCorrect:
+        firstActivityCorrect !== null ? parseInt(firstActivityCorrect) : 0,
+      firstActivityIncorrect:
+        firstActivityIncorrect !== null ? parseInt(firstActivityIncorrect) : 0,
+      secondActivityCorrect:
+        secondActivityCorrect !== null ? parseInt(secondActivityCorrect) : 0,
+      secondActivityIncorrect:
+        secondActivityIncorrect !== null ? parseInt(secondActivityIncorrect) : 0
+    },
+    summarized: {
+      allCorrectResults,
+      allIncorrectResults
+    }
+  };
+  return result;
+};
+```
+
+Para cada actividad lo único que varía es el nombre del método, las variables y los keys del AsyncStorage.
+
+Estos métodos se encuentran en un archivo de utilidades, por lo tanto son exportados y pueden ser utilizados en cualquier parte de la aplicación
 
 ---
 
