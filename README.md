@@ -1615,6 +1615,8 @@ Para las tarjetas de la lista
 
 ### 1. Results
 
+<img src="./src/assets/documentation/0-results.png" alt="drawing" width="400"/>
+
 Las actividades que tienen ejercicios, cuentan con una última página para ver los resultados(correctos e incorrectos) de cada ejercicio.
 
 La lectura y almacenamiento de los resultados se hace mediante AsyncStorage con el fin de no borrar los resultados al cerrar o reiniciar la aplicación, sino tener un alamcenamiento permanente mientras la aplicación se encuentre instalada.
